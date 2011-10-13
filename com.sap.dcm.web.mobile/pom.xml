@@ -1,0 +1,251 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sap.dcm</groupId>
+	<artifactId>com.sap.dcm.web.mobile</artifactId>
+	<packaging>war</packaging>
+
+	<version>1.00.0.0-SNAPSHOT</version>
+
+	<name>Dynamic Cash Management Mobile</name>
+
+	<parent>
+		<groupId>com.sap.ldi</groupId>
+		<artifactId>ldi-parent</artifactId>
+		<version>4.0.2</version>
+	</parent>
+
+	<properties>
+		<targetJdk>1.5</targetJdk>
+		<cxf.version>2.4.0</cxf.version>
+		<spring.version>3.0.5.RELEASE</spring.version>
+		<ui5.version>0.19.0</ui5.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-bundle-jaxrs</artifactId>
+			<version>${cxf.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.eclipse.jetty</groupId>
+					<artifactId>jetty-server</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.dna</groupId>
+			<artifactId>com.sap.dna.ui5</artifactId>
+			<version>0.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>commons</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>core</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>table</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>ux3</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>commons</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>themelib_sap_ux</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>themelib_sap_goldreflection</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sap.ui5</groupId>
+			<artifactId>resource</artifactId>
+			<version>${ui5.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.dna.spring.security</groupId>
+			<artifactId>hana</artifactId>
+			<version>0.5.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-asm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.15</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.mail</groupId>
+					<artifactId>mail</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sap.db.hdb</groupId>
+			<artifactId>com.sap.db.jdbc</artifactId>
+			<version>1.00.11.348776</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.5</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>FOP_DCM_MOBILE_APPLICATION</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${targetJdk}</source>
+					<target>${targetJdk}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>**/*TestCase.java</include>
+					</includes>
+				</configuration>
+			</plugin>
+		</plugins>
+		
+		<extensions>
+		
+			<!-- WebDAV is used for Maven artifact upload -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>1.0-beta-2</version>
+			</extension>
+			
+		</extensions>
+	</build>
+
+	<distributionManagement>
+		<!-- LeanDI: Nexus Milestones Repository -->
+		<repository>
+			<id>leandi.nexus.milestone.repo</id>
+			<name>LeanDI Nexus Milestones Repository</name>
+			<url>dav:http://nexus.wdf.sap.corp:8081/nexus/content/repositories/deploy.milestones</url>
+		</repository>
+
+		<!-- LeanDI: Nexus Snapshots Repository -->
+		<snapshotRepository>
+			<id>leandi.nexus.snapshot.repo</id>
+			<name>LeanDI Nexus Snapshots Repository</name>
+			<url>dav:http://nexus.wdf.sap.corp:8081/nexus/content/repositories/deploy.snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
