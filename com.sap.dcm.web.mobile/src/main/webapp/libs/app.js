@@ -9,23 +9,23 @@
 
     /**
      * @description The Framework's top object. all components will be register under it.
-     * @namespace Top namespace. Why named as V5, we salute the V8 project.
+     * @namespace Top namespace. Why named as App, we salute the V8 project.
      * The voice means it contains power in Chinese also.
      * @requires Underscore, jQuery/Zepto.
-     * @name V5
+     * @name App
      */
-    var V5 = function () {};
+    var App = function () {};
 
     /**
-     * Mixin EventProxy.prototype into V5.prototype, make it has bind, unbind, trigger methods.
+     * Mixin EventProxy.prototype into App.prototype, make it has bind, unbind, trigger methods.
      */
-    _.extend(V5, EventProxy.prototype);
+    _.extend(App, EventProxy.prototype);
 
     /**
      * @description Lets callback execute at a safely moment.
      * @param {function} callback The callback method that will execute when document is ready.
      */
-    V5.ready = function (callback) {
+    App.ready = function (callback) {
         if (document.readyState === "complete") {
             callback();
         } else {
@@ -42,23 +42,23 @@
     };
 
     /**
-    * @description Gets the V5 mode, detects the V5 runing in which devices.
+    * @description Gets the App mode, detects the App runing in which devices.
     * There are two modes current, phone or tablet.
     */
-    V5.mode = window.innerWidth < 768 ? "phone" : "tablet";
+    App.mode = window.innerWidth < 768 ? "phone" : "tablet";
 
     /**
     * @description Default viewport reference. Viewport could contains many view columns, it's detected by mode.
     */
-    V5.viewport = null;
+    App.viewport = null;
 
     /**
-     * @description Startups V5 framework.
+     * @description Startups App framework.
      */
-    V5.init = function () {
-        V5.ready(function () {
-            V5.viewport = $("#container");
-            V5.setOrientation();
+    App.init = function () {
+        App.ready(function () {
+            App.viewport = $("#container");
+            App.setOrientation();
             // Disable touch move events for integrate with iScroll.
             window.addEventListener("touchmove", function (e) {e.preventDefault(); }, false);
             // Use popstate to handle history go/back.
@@ -68,21 +68,21 @@
                     var args = params.split("/");
                     var currentHash = args.shift();
                     console.log("Hash Changed: " + currentHash);
-                    if (V5.hashHistory.length) {
-                        console.log(V5.hashHistory);
+                    if (App.hashHistory.length) {
+                        console.log(App.hashHistory);
                         if (currentHash !== undefined) {
-                            var topHash = _.map(V5.hashMap, function (val, key) {
+                            var topHash = _.map(App.hashMap, function (val, key) {
                                 return _.last(val);
                             });
                             if (_.include(topHash, params)) {
                                 console.log("changed, but no action.");
                             } else {
-                                var hashStack = _.compact(_.map(V5.hashMap, function (val, key) {
+                                var hashStack = _.compact(_.map(App.hashMap, function (val, key) {
                                     return _.include(val, currentHash) ? key : null;
                                 }));
                                 console.log(hashStack);
-                                V5.hashMap[hashStack[0]].pop();
-                                V5.trigger("openView", currentHash, _.indexOf(V5.columns, hashStack[0]));
+                                App.hashMap[hashStack[0]].pop();
+                                App.trigger("openView", currentHash, _.indexOf(App.columns, hashStack[0]));
                                 console.log("Forward or back");
                             }
                         }
@@ -91,16 +91,16 @@
             }, false);
 
             // Handle refresh case or first visit.
-            if (V5.hashHistory.length === 0) {
-                var map = V5.hashMap;
+            if (App.hashHistory.length === 0) {
+                var map = App.hashMap;
                 if (_.size(map)) {
                     // Restore view from session.
                     console.log("Restore from session.");
-                    V5.restoreViews();
+                    App.restoreViews();
                 } else {
                     // Init view.
                     console.log("Init view.");
-                    V5.initView();
+                    App.initView();
                 }
             }
         });
@@ -110,7 +110,7 @@
     /**
      * @description Handle orient change events.
      */
-    V5.setOrientation = function () {
+    App.setOrientation = function () {
         var _setOrientation = function () {
             var orient = Math.abs(window.orientation) === 90 ? 'landscape' : 'portrait';
             var aspect = orient === 'landscape' ? 'portrait' : 'landscape';
@@ -123,24 +123,24 @@
     /**
      * @description Cache the page html.
      */
-    V5._pageCache = {};
+    App._pageCache = {};
 
     /**
      * @description Predefined view columns.
      */
-    V5.columns = ["alpha", "beta", "gamma"];
+    App.columns = ["alpha", "beta", "gamma"];
     /**
      * @description Predefined viewport's state.
      */
-    V5.columnModes = ["single", "double", "triple"];
+    App.columnModes = ["single", "double", "triple"];
 
-    V5.bind("openView", function (viewName, effectColumn, args, viewport) {
-        if (V5.mode === "phone") {
+    App.bind("openView", function (viewName, effectColumn, args, viewport) {
+        if (App.mode === "phone") {
             effectColumn = 0;
         }
         args = args || [];
-        viewport = viewport || V5.viewport;
-        V5.displayView(viewName, effectColumn, args, viewport);
+        viewport = viewport || App.viewport;
+        App.displayView(viewName, effectColumn, args, viewport);
         var hash = [viewName].concat(args).join("/");
         history.pushState(hash, viewName, "#" + hash);
     });
@@ -148,20 +148,20 @@
     /**
      * @description Initializes views when first time visit.
      */
-    V5.initView = function () {
-        V5.trigger("openView", "index", 0);
+    App.initView = function () {
+        App.trigger("openView", "index", 0);
     };
 
     /**
      * @description Restores views from session storage.
      */
-    V5.restoreViews = function () {
-        var map = V5.hashMap;
+    App.restoreViews = function () {
+        var map = App.hashMap;
         console.log(map);
         _.each(map, function (viewNames, columnName) {
             var hash = viewNames.pop();
             var args = hash.split("/");
-            V5.trigger("openView", args.shift(), _.indexOf(V5.columns, columnName), args, V5.viewport);
+            App.trigger("openView", args.shift(), _.indexOf(App.columns, columnName), args, App.viewport);
         });
     };
 
@@ -173,12 +173,12 @@
      * If true, will generate view with localization resources.
      * @param {function} callback Callback function, will be called after got the view from cache or server.
      */
-    V5.getView = function (viewName, enableL10N, callback) {
-        var _pageCache = V5._pageCache;
-        var page = V5._pages[viewName];
+    App.getView = function (viewName, enableL10N, callback) {
+        var _pageCache = App._pageCache;
+        var page = App._pages[viewName];
         var proxy = new EventProxy();
         proxy.assign("l10n", "view", function (l10n, view) {
-            var html = V5.localize(view, l10n);
+            var html = App.localize(view, l10n);
             page.resources = l10n;
             callback($(html));
         });
@@ -195,8 +195,8 @@
 
         // Fetch the localize resources.
         if (page.enableL10N) {
-            V5.fetchL10N(viewName, function () {
-                proxy.trigger("l10n", V5.L10N[V5.langCode][viewName]);
+            App.fetchL10N(viewName, function () {
+                proxy.trigger("l10n", App.L10N[App.langCode][viewName]);
             });
         } else {
             proxy.trigger("l10n", {});
@@ -211,8 +211,8 @@
      * @param {array} args Parameters of view.
      * @param {object} viewport Which viewport, if don't set, will use default viewport.
      */
-    V5.displayView = function (hash, effectColumn, args, viewport) {
-        var columnName = V5.columns[effectColumn];
+    App.displayView = function (hash, effectColumn, args, viewport) {
+        var columnName = App.columns[effectColumn];
         var column = viewport.find("." + columnName);
         if (column.size() < 1) {
             column = $("<div><div class='column_loading'><div class='loading_animation'></div></div></div>");
@@ -220,34 +220,34 @@
             viewport.append(column);
         }
 
-        if (viewport === V5.viewport) {
-            if (V5.hashMap[columnName]) {
-                V5.hashMap[columnName].push([hash].concat(args).join("/"));
+        if (viewport === App.viewport) {
+            if (App.hashMap[columnName]) {
+                App.hashMap[columnName].push([hash].concat(args).join("/"));
             } else {
-                V5.hashMap[columnName] = [[hash].concat(args).join("/")];
+                App.hashMap[columnName] = [[hash].concat(args).join("/")];
             }
-            V5.hashHistory.push([hash].concat(args));
+            App.hashHistory.push([hash].concat(args));
         }
 
-        var page = V5._pages[hash];
+        var page = App._pages[hash];
         if (page) {
             var previousPage = column.find("section.page.active").removeClass("active");
             if (previousPage.length) {
                 var id = previousPage.attr('id');
-                var previous = V5._pages[id];
+                var previous = App._pages[id];
                 if (previous && id !== hash) {
                     previous.shrink();
                 }
             }
 
             var loadingNode = column.find(".column_loading").removeClass("hidden");
-            var page = V5._pages[hash];
-            V5.getView(hash, page.enableL10N, function (view) {
+            var page = App._pages[hash];
+            App.getView(hash, page.enableL10N, function (view) {
                 loadingNode.addClass("hidden");
-                if (viewport === V5.viewport) {
-                    viewport.attr("class", V5.columnModes[_.size(V5.hashMap) - 1]);
+                if (viewport === App.viewport) {
+                    viewport.attr("class", App.columnModes[_.size(App.hashMap) - 1]);
                 }
-                page.columnIndex = _.indexOf(V5.columns, columnName);
+                page.columnIndex = _.indexOf(App.columns, columnName);
                 if (!page.initialized) {
                     column.append(view);
                     page.node = view;
@@ -259,7 +259,7 @@
                         page.destroy();
                         page.node.remove();
                         page.initialized = false;
-                        V5.getView(hash, page.enableL10N, arguments.callee);
+                        App.getView(hash, page.enableL10N, arguments.callee);
                         return;
                     } else {
                         page.node.addClass("active");
@@ -278,12 +278,12 @@
     /**
      * @description History implementation. Stores history actions.
      */
-    V5.hashHistory = [];
+    App.hashHistory = [];
 
     /**
      * @description Store hash and keep in session storage.
      */
-    V5.hashMap = (function () {
+    App.hashMap = (function () {
         var session = getStorage("session");
         var hashMap = session.get("hashMap");
         if (!hashMap) {
@@ -292,12 +292,12 @@
             session.remove("hashMap");
         }
         $(window).bind("unload", function () {
-            session.put("hashMap", V5.hashMap);
+            session.put("hashMap", App.hashMap);
         });
         return hashMap;
     }());
 
-    global.V5 = V5;
+    global.App = App;
 }(window));
 
 /**
@@ -309,7 +309,7 @@
      * @param {node} node a $(Zepto/jQuery) element node.
      * @returns {View} View object, based on Backbone.View.
      */
-    V5.View = function (node) {
+    App.View = function (node) {
         var View = Backbone.View.extend({
             el: node,
             bind: function (name, method) {
@@ -327,28 +327,28 @@
  * Templates
  */
 (function (global) {
-    var V5 = global.V5;
-    V5._templates = {};
+    var App = global.App;
+    App._templates = {};
 
     /**
      * @description templateMode, optimized or normal.
      */
-    V5.templateMode = "normal";
+    App.templateMode = "normal";
 
     var getTemplateNormally = function (name, callback) {
-        var template = V5._templates[name];
+        var template = App._templates[name];
         if (template) {
             callback(template);
         } else {
             $.get("templates/" + name + ".tmpl?_=" + new Date().getTime(), function (templ) {
-                V5._templates[name] = templ;
+                App._templates[name] = templ;
                 callback(templ);
             });
         }
     };
 
     var getTemplateOptimized = function (name, callback) {
-        var template = V5._templates[name];
+        var template = App._templates[name];
         if (template) {
             callback(template);
         } else {
@@ -356,9 +356,9 @@
                 $(templ).find("script").each(function (index, script) {
                     var templateNode = $(script);
                     var id = templateNode.attr("id");
-                    V5._templates[id] = templateNode.html();
+                    App._templates[id] = templateNode.html();
                 });
-                callback(V5._templates[name]);
+                callback(App._templates[name]);
             });
         }
     };
@@ -366,8 +366,8 @@
     /**
      * @description Fetch the template file.
      */
-    V5.getTemplate = function (name, callback) {
-        if (V5.templateMode === "normal") {
+    App.getTemplate = function (name, callback) {
+        if (App.templateMode === "normal") {
             getTemplateNormally(name, callback);
         } else {
             getTemplateOptimized(name, callback);
@@ -380,22 +380,22 @@
  * Page defined
  */
 (function (global) {
-    var V5 = global.V5;
+    var App = global.App;
     /**
      * @description Page namespace. All page module will be stored at here.
      * @namespace 
      * @private
      */
-    V5._pages = {};
+    App._pages = {};
 
     /**
-     * @description Register a page to V5.
-     * @param {string} name Page id, used as key, V5 framework find page element by this name
+     * @description Register a page to App.
+     * @param {string} name Page id, used as key, App framework find page element by this name
      * @param {function} The module object.
      */
-    V5.registerPage = function (name, module) {
+    App.registerPage = function (name, module) {
         if (typeof module === "function") {
-            V5._pages[name] = new V5.Page(module());
+            App._pages[name] = new App.Page(module());
         }
     };
 
@@ -448,7 +448,7 @@
         }
         var args = hash.split("/");
         var viewName = args.shift();
-        V5.trigger("openView", viewName, effectColumn, args);
+        App.trigger("openView", viewName, effectColumn, args);
     };
 
     /**
@@ -459,7 +459,7 @@
         var view  = args.shift();
         var viewport = $("<div></div>").addClass("viewport");
         $(document.body).append(viewport);
-        V5.trigger("openView", view, 0, args, viewport);
+        App.trigger("openView", view, 0, args, viewport);
     };
 
     /**
@@ -478,9 +478,9 @@
      * @description Call a common module.
      */
     Page.prototype.call = function (moduleId) {
-        var module = V5._modules[moduleId];
+        var module = App._modules[moduleId];
         if (module) {
-            module.V5ly(this, []);
+            module.Apply(this, []);
         } else {
             throw moduleId + " Module doesn't exist";
         }
@@ -506,25 +506,25 @@
      * @description Define a page component. Page will be displayed in a view colomn.
      * @param {function} module Module object.
      * @class Represents a page.
-     * @constructor V5.Page.
-     * @memberOf V5
+     * @constructor App.Page.
+     * @memberOf App
      */
-    V5.Page = Page;
+    App.Page = Page;
 }(window));
 
 /**
  * Module
  */
 (function (global) {
-    var V5 = global.V5;
+    var App = global.App;
 
-    V5._modules = {};
+    App._modules = {};
 
     /**
      * @description Register a common module.
      */
-    V5.registerModule = function (moduleId, module) {
-        V5._modules[moduleId] = module;
+    App.registerModule = function (moduleId, module) {
+        App._modules[moduleId] = module;
     };
 
 }(window));
@@ -533,31 +533,31 @@
  * Localization
  */
 (function (global) {
-    var V5 = global.V5;
+    var App = global.App;
 
     /**
      * @description Local code.
      */
-    V5.langCode = "en-US";
+    App.langCode = "en-US";
 
     /**
      * @description All localization resources will be stored at here by locale code.
      * @namespace Localization resources namespace.
      */
-    V5.L10N = {};
+    App.L10N = {};
 
     /**
      * @description Gets localization resources by view name.
      * @param {string} viewName View name
      * @param {function} callback Callback that will be invoked when sources is got.
      */
-    V5.fetchL10N = function (viewName, callback) {
-        var code = V5.langCode;
+    App.fetchL10N = function (viewName, callback) {
+        var code = App.langCode;
         $.getJSON("languages/" + viewName + "_" + code + ".lang?_=" + new Date().getTime(), function (data) {
-            // Sets l10n resources to V5.L10N
-            V5.L10N[code] = V5.L10N[code] || {};
-            _.extend(V5.L10N[code], data);
-            callback(V5.L10N[code]);
+            // Sets l10n resources to App.L10N
+            App.L10N[code] = App.L10N[code] || {};
+            _.extend(App.L10N[code], data);
+            callback(App.L10N[code]);
         });
     };
 
@@ -567,7 +567,7 @@
      * @param {object} resources resources object.
      * @returns rendered html string.
      */
-    V5.localize = function (template, resources) {
+    App.localize = function (template, resources) {
         var settings = {
                 interpolate : /\{\{(.+?)\}\}/g
             };
@@ -578,12 +578,12 @@
 }(window));
 
 /**
- * V5 message mechanism.
+ * App message mechanism.
  */
 (function (global) {
-    var V5 = global.V5;
-    V5.postMessage = function (hash, event, data) {
-        var page = V5._pages[hash];
+    var App = global.App;
+    App.postMessage = function (hash, event, data) {
+        var page = App._pages[hash];
         if (page) {
             page.postMessage(event, data);
         }
