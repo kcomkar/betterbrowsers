@@ -1,1 +1,27 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title>Mobile Web Application for DCM</title>
+        
+        <script type="text/javascript" src="libs/LAB.src.js"></script>
+        <script type="text/javascript">
+	        $LAB.script("libs/storage.js")
+	        .script("libs/zepto.js")
+	        .script("libs/eventproxy.js")
+	        .script("libs/underscore.js").wait()
+	        .script("libs/backbone-0.5.3.js").wait()
+	        .script("V5.js").wait(function () {
+	            V5.init();
+	        });
+        </script>
+    </head>
+    <body id="container">
+        <div class="alpha">Hello from V5 to DCM!</div>
+        <div class="beta"></div>
+    </body>
+</html>
