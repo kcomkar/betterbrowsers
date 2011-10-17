@@ -7,21 +7,31 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <title>Mobile Web Application for DCM</title>
-        
-        <script type="text/javascript" src="libs/LAB.src.js"></script>
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/hitlist.css" />
+        <link rel="stylesheet" href="css/detail.css" />
+        <link rel="stylesheet" href="css/note.css" />
+        <script type="text/javascript" src="libs3rd/LAB.src.js"></script>
         <script type="text/javascript">
-	        $LAB.script("libs/storage.js")
-	        .script("libs/zepto.js")
-	        .script("libs/eventproxy.js")
-	        .script("libs/underscore.js").wait()
-	        .script("libs/backbone-0.5.3.js").wait()
-	        .script("V5.js").wait(function () {
-	            V5.init();
-	        });
+            $LAB.script("libs/storage.js")
+            .script("libs3rd/zepto.js")
+            .script("libs3rd/iscroll.js")
+            .script("libs/eventproxy.js")
+            .script("libs3rd/underscore.js").wait()
+            .script("libs3rd/backbone-0.5.3.js").wait()
+            .script("libs/app.js").wait()
+            .script("libs/appui.tabview.js")
+            .script("libs/common.js").wait()
+            .script("scripts/hitlist.js")
+            .script("scripts/detail.js")
+            .script("scripts/note.js").wait(function () {
+                App.init();
+            });
         </script>
     </head>
     <body id="container">
-        <div class="alpha">Hello from V5 to DCM!</div>
+        <div class="alpha"></div>
         <div class="beta"></div>
     </body>
 </html>
