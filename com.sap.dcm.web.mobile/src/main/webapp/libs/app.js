@@ -149,7 +149,7 @@
      * @description Initializes views when first time visit.
      */
     App.initView = function () {
-        App.trigger("openView", "index", 0);
+        App.trigger("openView", "hitlist", 0);
     };
 
     /**

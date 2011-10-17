@@ -1,0 +1,10 @@
+<section id="note" class="page">
+    <header>
+        <a class="done">Done</a>
+        <div class="title">Notes</div>
+        <a class="add"></a>
+    </header>
+    <article>
+    
+    </article>
+</section>

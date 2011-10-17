@@ -1,0 +1,9 @@
+<ul>
+    <% _.each(data, function (item) { %>
+    <li class="item">
+        <% _.each(metadata, function (field) {
+            <div><%=item[field]%></div>
+        <% }); %>
+    </li>
+    <% }); %>
+</ul>

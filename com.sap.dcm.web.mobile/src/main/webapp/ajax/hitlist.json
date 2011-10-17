@@ -1,0 +1,13 @@
+{
+    "dso": {
+        "data": [{"id": "001", "company": "Terra Earth Movers", "dso": "73 days"},
+            {"id": "002", "company": "Rolf & Sons Materials", "dso": "70 days"},
+            {"id": "003", "company": "Pliant Stock", "dso": "68 days"},
+            {"id": "004", "company": "National Builders", "dso": "65 days"},
+            {"id": "005", "company": "Newton-Walsh", "dso": "65 days"},
+            {"id": "006", "company": "Bakker Equipment", "dso": "62 days"}],
+        "entityType": ["company", "dso"],
+        "ui_widget": "dso"},
+    "openAmt": [],
+    "intLoss": []
+}

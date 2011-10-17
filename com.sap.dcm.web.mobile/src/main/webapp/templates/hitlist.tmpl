@@ -1,0 +1,18 @@
+<nav>
+    <ul class="tabs">
+<% _.each(navs, function (nav, index) { %>
+        <li><a href="javascript:;"><%= nav.label%></a></li>
+<% });%>
+    </ul>
+</nav>
+<article>
+    <div class="tab-panel">
+        <div class="panels">
+<%      _.each(navs, function (nav, index) { %>
+            <div class="panel">
+                <div class="loading"><div class='loading_animation'></div>{{loading}}</div>
+            </div>
+<%      });%>
+        </div>
+    </div>
+</article>

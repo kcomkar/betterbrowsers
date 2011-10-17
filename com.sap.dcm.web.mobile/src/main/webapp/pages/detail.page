@@ -1,0 +1,14 @@
+<section id="detail" class="page">
+    <header>
+        <!-- company name -->
+    </header>
+    <article class="detail_info">
+        
+    </article>
+    <footer class="toolbar">
+        <!-- operation button here without localization-->
+        <a class="show_hitlist">Hit List</a>
+        <a class="show_contact">Contact</a>
+        <a class="show_notes">Notes</a>
+    </footer>
+</section>
