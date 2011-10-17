@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sap.com/dcm/uiPage"
+	xmlns:tns="http://www.sap.com/dcm/uiPage" elementFormDefault="qualified">
+	
+	<xs:complexType name="role">
+		<xs:attribute name="id" type="xs:string" use="required" />
+	</xs:complexType>
+	
+	<xs:complexType name="subPage">
+		<xs:sequence > 
+			<xs:element name="allowedRole" type="tns:role" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required" />
+		<xs:attribute name="uiText" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="page">
+		<xs:sequence> 
+			<xs:element name="page" type="tns:subPage" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="allowedRole" type="tns:role" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required" />
+		<xs:attribute name="defaultPage" type="xs:string" use="optional"/>
+		<xs:attribute name="uiText" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:element name="pages">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="page" type="tns:page" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="defaultPage" type="xs:string" use="optional"/>
+		</xs:complexType>
+		
+		<xs:keyref name="pageKeyRef" refer="tns:pageKey">
+	      <xs:selector xpath=". | ./tns:page"/>
+	      <xs:field xpath="@defaultPage"/>
+	    </xs:keyref>
+	    <xs:key name="pageKey">
+	      <xs:selector xpath=".//tns:page"/>
+	      <xs:field xpath="@id"/>
+	    </xs:key>
+	    		
+		<xs:unique name="pageId">
+		    <xs:selector xpath=".//tns:page"/>
+		    <xs:field xpath="@tns:id"/>
+		</xs:unique>
+	</xs:element>
+	
+	
+</xs:schema>
