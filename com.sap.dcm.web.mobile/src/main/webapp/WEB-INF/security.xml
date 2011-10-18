@@ -33,7 +33,8 @@
 		<intercept-url pattern="/pages/**" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/scripts/**" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/templates/**" access="permitAll()" requires-channel="https" />
-		
+        <intercept-url pattern="/index.html" access="permitAll()" requires-channel="https" />
+
 		<intercept-url pattern="/logon.html*" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/rest/mobile/mobLoginService/**" access="permitAll()" requires-channel="https" />
 		<!-- <intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https" />-->
