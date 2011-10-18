@@ -36,7 +36,8 @@
 		
 		<intercept-url pattern="/logon.html*" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/rest/mobile/mobLoginService/**" access="permitAll()" requires-channel="https" />
-		<intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https" />
+		<!-- <intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https" />-->
+		<intercept-url pattern="/**" access="permitAll()" requires-channel="https" />
 		<form-login login-page="/logon.html"/>
 		<http-basic/>
 		<logout logout-success-url="/logon.html" />
