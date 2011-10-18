@@ -17,8 +17,7 @@ App.registerPage("logon", function () {
                 		function (data) {
                     logonButton.data("ajax", "complete");
                     if (data.loggedIn = "true") {
-//                        location.hash = "hitlist";
-                    	page.openView("hitlist/"+ username + "/" + password, false);
+                        location.href = "index.html";
                     }
                     console.log(data); 
                 }, "application/x-www-form-urlencoded");
@@ -37,6 +36,7 @@ App.registerPage("logon", function () {
         
     };
     return {
-        initialize: initialize
+        initialize: initialize,
+        enableL10N: true
     };
 });
