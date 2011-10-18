@@ -3,12 +3,87 @@
         <!-- company name -->
     </header>
     <article class="detail_info">
-        
+        <div class="scroller">
+            <ul>
+                <li>
+                    <h3>Customer Information</h3>
+                    <div>Rolf &amp; Sons Materials</div>
+                    <div class="address1">2257 Industrial Way</div>
+                    <div class="address2">Flagstaff AZ 86002</div>
+                    <div class="state">USA</div>
+                    <div></div>
+                </li>
+                <li>
+                    <h3>Accounts Receivable Overview</h3>
+                    <dl>
+                        <dt>Overdue Amount</dt>
+                        <dd>873,597.33 EUR</dd>
+                        <dt>Days Sales Outstanding</dt>
+                        <dd>70 days</dd>
+                        <dt>Open Amount</dt>
+                        <dd>1,237,588.92 EUR</dd>
+                        <dt>Interest Loss</dt>
+                        <dd>2,685.42 EUR</dd>
+                        <dt>Dunning Level</dt>
+                        <dd>3</dd>
+                        <dt>Last Dunning</dt>
+                        <dd>09/12/2011</dd>
+                    </dl>
+                </li>
+                <li>
+                    <h3>Financial Details</h3>
+                    <dl>
+                        <dt>Revenue Last Year</dt>
+                        <dd>873,597.33 EUR</dd>
+                        <dt>Promised Amount</dt>
+                        <dd>872, 588.43 EUR</dd>
+                        <dt>Broken Promise to Pay</dt>
+                        <dd>1,237,588.92 EUR</dd>
+                        <dt>Disputed Amount</dt>
+                        <dd>2,685.42 EUR</dd>
+                        <dt>Manual Clearing Ratio</dt>
+                        <dd>0.68</dd>
+                    </dl></li>
+                <li>
+                    <h3>Outstanding Invoices</h3>
+                    <ul>
+                        <li>
+                            <div class="info"></div>
+                            <a href="" class="action"></a>
+                        </li>
+                        <li>
+                            <div class="info"></div>
+                            <a href="" class="action"></a>
+                        </li>
+                        <li>
+                            <div class="info"></div>
+                            <a href="" class="action"></a>
+                        </li>
+                        <li>
+                            <div class="info"></div>
+                            <a href="" class="action"></a>
+                        </li>
+                        <li>
+                            <div class="info"></div>
+                            <a href="" class="action"></a>
+                        </li>
+                        <li>
+                            <div class="info"></div>
+                            <a href="" class="action"></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </article>
     <footer class="toolbar">
         <!-- operation button here without localization-->
-        <a class="show_hitlist">Hit List</a>
-        <a class="show_contact">Contact</a>
-        <a class="show_notes">Notes</a>
+        <nav>
+            <ul>
+                <li><a class="show_hitlist" href="">Hit List</a></li>
+                <li><a class="show_contact" href="">Contact</a></li>
+                <li><a class="show_notes" href="">Notes</a></li>
+            </ul>
+        </nav>
     </footer>
 </section>
