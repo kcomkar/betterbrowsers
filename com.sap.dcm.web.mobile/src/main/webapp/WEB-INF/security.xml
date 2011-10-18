@@ -15,7 +15,7 @@
 	<global-method-security pre-post-annotations="enabled" secured-annotations="enabled"  />
 	
 	<http use-expressions="true" >
-		<intercept-url pattern="/js-lib/**" access="permitAll()" requires-channel="https" />
+		<!-- <intercept-url pattern="/js-lib/**" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/images/**" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/resources/**" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/logon/**" access="permitAll()" requires-channel="https" />
@@ -23,7 +23,10 @@
 		<intercept-url pattern="/rest/login" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/rest/user/changePwd" access="permitAll()" requires-channel="https"/>
 		<intercept-url pattern="/rest/ilm/**" access="hasAnyRole('ROLE_SAP_DCM_ILM_READ','ROLE_SAP_DCM_ILM_DELETE')" requires-channel="https" />
-		<intercept-url pattern="/rest/appMgmt/**" access="hasAnyRole('ROLE_SAP_DCM_USER_ADM')" requires-channel="https" />
+		<intercept-url pattern="/rest/appMgmt/**" access="hasAnyRole('ROLE_SAP_DCM_USER_ADM')" requires-channel="https" /> -->
+		
+		<intercept-url pattern="/logon/**" access="permitAll()" requires-channel="https" />
+		<intercept-url pattern="/rest/mobile/mobLoginService/**" access="permitAll()" requires-channel="https" />
 		<intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https" />
 		<form-login login-page="/logon/logon.html"/>
 		<http-basic/>

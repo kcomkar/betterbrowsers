@@ -12,20 +12,29 @@
 	
 	<jaxrs:server id="restSeviceContainer" address="/">
 		<jaxrs:serviceBeans>
-			<ref bean="uiService"/>
+			<!-- <ref bean="uiService"/>
 			<ref bean="passwordService" />
 			<ref bean="ilmCustomerData" />
 			<ref bean="loginService" />
-			<ref bean="usrMgmtService" />
+			<ref bean="usrMgmtService" /> -->
+			<ref bean="mobloginService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<bean id="secExcepMapper" class="com.sap.dcm.web.exception.mapper.SecurityExceptionMapper"/>
-			<bean id="cacheHandler" class="com.sap.dcm.web.core.CacheControlResponseHandler" />
+			<!-- <bean id="cacheHandler" class="com.sap.dcm.web.core.CacheControlResponseHandler" /> -->
 		</jaxrs:providers>
 	</jaxrs:server>
 
 	<!-- REST Beans -->
-	<bean id="uiService" class="com.sap.dcm.web.ui.impl.UIServiceBean">
+	<bean id="mobloginService" class=" com.sap.dcm.mobile.service.login.MobLoginServiceImpl">
+		<property name="provider" ref="customAuthenticationProvider" />
+		<property name="requiredRoles">
+			<set>
+				<value>ROLE_SAP_DCM_MOBILE</value>
+			</set>
+		</property>
+	</bean>
+	<!-- <bean id="uiService" class="com.sap.dcm.web.ui.impl.UIServiceBean">
 		<property name="pageProvider" ref="uiPageProvider" />
 		<property name="userService" ref="usrMgmtService" />
 	</bean>
@@ -37,7 +46,7 @@
 	
 	<bean id="loginService" class="com.sap.dcm.web.security.impl.LoginServiceImpl">
 		<property name="provider" ref="customAuthenticationProvider" />
-	</bean> 
+	</bean>  -->
 
 	<!-- UI Beans -->
 	<bean id="uiPageProvider"
