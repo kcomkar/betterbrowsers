@@ -19,8 +19,11 @@
             .script("libs3rd/underscore.js").wait()
             .script("libs3rd/backbone-0.5.3.js").wait()
             .script("libs/app.js").wait()
+            .script("libs/common.js").wait()
             .script("scripts/logon.js").wait(function () {
-                
+            	App.initView = function () {
+                    App.trigger("openView", "logon", 0);
+                };
                 App.init();
             });
         </script>
