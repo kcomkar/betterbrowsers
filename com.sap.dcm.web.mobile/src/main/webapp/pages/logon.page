@@ -1,0 +1,32 @@
+<section id="note" class="page">
+    <header>
+        <a class="done">Done</a>
+        <div class="title">logon</div>
+        <a class="add"></a>
+    </header>
+    <article>
+  <div class="login_info">
+    <ul class="listview">
+        <li class="username">
+            <label for="username"><i></i>{{username}}</label>
+            <input type="text" name="username" id="username" value="" placeholder="username"/>
+        </li>
+        <li class="password">
+            <label for="password"><i></i>{{password}}</label>
+            <input type="password" name="password" id="password" value="" placeholder="password"/>
+        </li>
+        <li class="remember">
+            <label for="rememberme"><i></i>{{rememberme}}</label>
+            <select name="rememberme" id="rememberme" class="slider">
+                <option value="no">{{no}}</option>
+                <option value="yes">{{yes}}</option>
+            </select>
+        </li>
+    </ul>
+	<!-- Login Button -->
+    <div class="logon">
+        <input id="logon_button" name="{{logon}}" value="logon" type="button" />
+    </div>
+</div>
+    </article>
+</section>
