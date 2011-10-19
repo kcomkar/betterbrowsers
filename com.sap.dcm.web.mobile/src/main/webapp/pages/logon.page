@@ -5,7 +5,8 @@
         <a class="add"></a>
     </header>
     <article>
-  <div class="login_info">
+  <div class="logon_info">
+    <div class = "Logon_title">Collection Hit List</div>
     <ul class="listview">
         <li class="username">
             <label for="username"><i></i>{{username}}</label>
@@ -27,6 +28,9 @@
     <div class="logon">
         <input id="logon_button" name="{{logon}}" value="logon" type="button" />
     </div>
+    <div class="logon_bottomBigfont">SAP Dynamic Cash Management</div>
+    <div class="logon_bottomSamllfont">POWERED BY SAP HAHA</div>
+    <div class="logon_img"><img/></div>
 </div>
     </article>
 </section>
