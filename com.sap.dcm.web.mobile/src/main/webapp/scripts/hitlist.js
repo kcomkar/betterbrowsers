@@ -34,9 +34,15 @@ App.registerPage("hitlist", function () {
         });
         
         
+        listView.bind("showDetail", function (event) {
+            var target = $(event.currentTarget);
+            var itemId = target.data("id");
+            page.openView("detail/" + itemId, false);
+        });
         
-        
-        
+        listView.delegateEvent({
+            "li.item": "showDetail"
+        });
         
     };
     return {
