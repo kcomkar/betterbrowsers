@@ -27,14 +27,18 @@
             .script("scripts/detail.js")
             .script("scripts/note.js").wait(function () {
                 App.initView = function () {
-                    App.trigger("openView", "hitlist", 0);
+                    App.trigger("openView", "detail", 0);
                 };
                 App.init();
             });
         </script>
     </head>
-    <body id="container">
-        <div class="alpha"></div>
-        <div class="beta"></div>
+    <body>
+        <div id="container">
+        <!-- Document here! -->
+            <div class="alpha"></div>
+            <div class="beta"></div>
+            <div class="gamma"></div>
+        </div>
     </body>
 </html>
