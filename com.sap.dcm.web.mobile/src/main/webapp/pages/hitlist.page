@@ -1,7 +1,7 @@
 <section id="hitlist" class="page">
     <header>
-        <a class="preference">preference</a>
         <h2 class="title">Collections Hit List</h2>
+        <a class="preference" placeholder="Setting">Setting</a>
     </header>
     <div class="collection">
         <div class="column_loading">

@@ -4,10 +4,7 @@ App.registerPage("hitlist", function () {
         var listView = new App.View(page.node);
         var proxy = new EventProxy();
         
-       
-        
         //fetch data from the given url
-
         listView.fetchData = function (url) {
             $.getJSON("ajax/"+ url +".json", function (data) {
                 proxy.trigger("data", data.results);
@@ -40,7 +37,7 @@ App.registerPage("hitlist", function () {
             page.openView("detail/" + itemId, false);
         });
         
-        listView.delegateEvent({
+        listView.delegateEvents({
             "li.item": "showDetail"
         });
         

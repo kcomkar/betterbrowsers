@@ -132,8 +132,8 @@
     margin: 0 0 0 15px;
 }
 .tab-panel .tabs li {
-    width: 128px;
-    height: 55px;
+    width: 30%;
+    height: 45px;
     margin: 0 -9px;
     text-align: center;
     position: relative;

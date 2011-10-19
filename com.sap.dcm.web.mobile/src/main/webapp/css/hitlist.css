@@ -19,7 +19,7 @@
 }
 
 #hitlist nav ul {
-    background-color: lightgray;
+    background-color: #FFA500;
     height: 100%;
     display: -webkit-box;
     -webkit-box-align: center;
@@ -27,11 +27,80 @@
     margin: 0;    
 }
 
+#hitlist nav li {
+    background: transparent;
+}
+
+
+
+#hitlist nav li:first-child a {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#hitlist nav li:last-child a {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 #hitlist nav li a {
     display: -webkit-box;
     height: 100%;
-    width: 128px;
+    width: 99%;
     box-sizing: border-box;
     -webkit-box-align: center;
     -webkit-box-pack: center;
+    background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #888), color-stop(0.5, #999), color-stop(1, #aaa));
 }
+
+#hitlist nav li.active a {
+    background-image: -webkit-gradient(linear,left top,left bottom,
+        color-stop(0, #575962),
+        color-stop(0.5, #292A37),
+        color-stop(1, #2F303E));
+    color: #fff;
+}
+#hitlist .tab-panel .panel ul {
+    width: 100%;
+}
+
+#hitlist .panel li.item {
+    display: -webkit-box;
+    height: 45px;
+    border-bottom: 1px solid;
+}
+
+#hitlist .panel li.item div:first-child {
+   width: 70%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+}
+
+#hitlist .panel li.item div:last-child {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: blue;
+    -webkit-box-flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
