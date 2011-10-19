@@ -1,10 +1,10 @@
 <section id="detail" class="page">
     <header>
-        <!-- company name -->
+        Rolf &amp; Sons Materials
     </header>
-    <article class="detail_info">
+    <article>
         <div class="scroller">
-            <ul>
+            <ul class="detail_info">
                 <li>
                     <h3>Customer Information</h3>
                     <div>Rolf &amp; Sons Materials</div>
@@ -75,6 +75,14 @@
                 </li>
             </ul>
         </div>
+        <nav class="indicator">
+            <ul>
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </nav>
     </article>
     <footer class="toolbar">
         <!-- operation button here without localization-->
