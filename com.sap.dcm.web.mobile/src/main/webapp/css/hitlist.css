@@ -1,0 +1,37 @@
+#hitlist header {
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+
+#hitlist .preference {
+   width: 60px;
+    height: 35px;
+    display: -webkit-box;
+    border: 1px solid #333;
+    -webkit-box-align: center;
+    color: white;
+    margin-left: 5px;
+    box-shadow: -1px -1px 2px #fff;
+}
+
+#hitlist h2.title {
+    -webkit-box-flex: 1;
+}
+
+#hitlist nav ul {
+    background-color: lightgray;
+    height: 100%;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    margin: 0;    
+}
+
+#hitlist nav li a {
+    display: -webkit-box;
+    height: 100%;
+    width: 128px;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}

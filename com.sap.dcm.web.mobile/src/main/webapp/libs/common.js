@@ -159,6 +159,7 @@ App.util = (function () {
     };
 }());
 
+/*
 App.TabModule = function (nav) {
     return function () {
         var tab = this;
@@ -317,6 +318,82 @@ App.TabModule = function (nav) {
         });
     };
 };
+*/
+App.TabModule = function (nav) {
+    return function () {
+        var tab = this;
+        console.log(tab);
+        tab.bind("initialize", function () {
+            var util = App.util;
+            var proxy = new EventProxy();
+            proxy.assignAll("template", "items", function (template, items) {
+                var html = _.template(template, {"data": items});
+                tab.panel.html(html);
+                var iscroll = new iScroll(tab.panel[0], {
+                    useTransform : false,
+                    onBeforeScrollStart : function (e) {
+                        var target = e.target;
+                        while (target.nodeType !== 1) {
+                            target = target.parentNode;
+                        }
+                        if (target.tagName !== 'SELECT' && target.tagName !== 'INPUT'
+                                && target.tagName !== 'TEXTAREA') {
+                            e.preventDefault();
+                        }
+                    },
+                    scrollbarClass : 'myScrollbar'
+                });
+            });
+
+            // Fetch table template
+            var widget = nav.ui_widget || "collection";
+            App.getTemplate(widget.toLowerCase(), function (template) {
+                proxy.trigger("template", template);
+            });
+
+            proxy.bind("items", function (data) {
+                nav.originalData = data;
+            });
+
+            proxy.once("error", function () {
+                tab.panel.empty();
+                var resources = {content: nav.context.resources.netError, ok: nav.context.resources.ok};
+                var dialog = new AppUI.Dialog({className: "alert", modal: true}, resources, function () {
+                    dialog.close().destroy();
+                }, AppUI.Dialog.noticeTemplate);
+                dialog.open();
+            });
+
+            if (nav.data) {
+                proxy.trigger("items", nav.data);
+            } else {
+                // Get items data.
+                var itemsRequest = util.buildRequest(nav.url);
+                OData.read(itemsRequest, function (data) {
+                    nav.data = data.results;
+                    proxy.trigger("items", data.results);
+                }, function (error) {
+                    proxy.trigger("error");
+                    console.log(error);
+                });
+            }
+
+
+            // Delegate update events
+          
+
+        });
+        tab.bind("active", function () {
+            console.log("active");
+        });
+    };
+};
+
+
+
+
+
+
 
 App.format = function (value, converter, formatType) {
     if (converter) {
