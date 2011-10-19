@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></meta>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <title>Mobile Web Application for DCM</title>
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/logon.css" />
+        <script type="text/javascript" src="libs3rd/LAB.src.js"></script>
+        <script type="text/javascript">
+            $LAB.script("libs/storage.js")
+            .script("libs3rd/zepto.js")
+            .script("libs3rd/iscroll.js")
+            .script("libs/eventproxy.js")
+            .script("libs3rd/underscore.js").wait()
+            .script("libs3rd/backbone-0.5.3.js").wait()
+            .script("libs/app.js").wait()
+            .script("libs/common.js").wait()
+            .script("scripts/logon.js").wait(function () {
+            	App.initView = function () {
+                    App.trigger("openView", "logon", 0);
+                };
+                App.init();
+            });
+        </script>
+    </head>
+    <body id="container">
+        <div class="alpha"></div>
+        <div class="beta"></div>
+    </body>
+</html>

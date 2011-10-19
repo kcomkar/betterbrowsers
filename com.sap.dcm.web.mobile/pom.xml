@@ -19,7 +19,6 @@
 		<targetJdk>1.5</targetJdk>
 		<cxf.version>2.4.0</cxf.version>
 		<spring.version>3.0.5.RELEASE</spring.version>
-		<ui5.version>0.19.0</ui5.version>
 	</properties>
 
 	<dependencies>
@@ -34,52 +33,6 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<dependency>
-			<groupId>com.sap.dna</groupId>
-			<artifactId>com.sap.dna.ui5</artifactId>
-			<version>0.1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>commons</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>core</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>table</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>ux3</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>commons</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>themelib_sap_ux</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>themelib_sap_goldreflection</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sap.ui5</groupId>
-			<artifactId>resource</artifactId>
-			<version>${ui5.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>com.sap.dna.spring.security</groupId>
 			<artifactId>hana</artifactId>

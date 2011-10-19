@@ -1,0 +1,13 @@
+{
+    "logon" : {
+        "username": "Username",
+        "password": "Password",
+        "rememberme": "Remember me?",
+        "yes": "Yes",
+        "no": "No",
+        "advance": "Advance setting",
+        "serverurl": "Server address",
+        "port": "Port",
+        "logon": "Logon"
+    }
+}
