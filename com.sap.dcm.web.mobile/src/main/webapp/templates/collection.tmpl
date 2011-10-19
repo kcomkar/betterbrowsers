@@ -1,0 +1,11 @@
+<ul>
+    <% _.each(data, function (item) { %>
+    <li class="item" data-id="<%=item.id%>">
+        <% _.each(item, function (val, key) { %>
+            <% if(key !== "id") {%>
+            <div><%=val%></div>
+            <% } %>
+        <% }); %>
+    </li>
+    <% }); %>
+</ul>
