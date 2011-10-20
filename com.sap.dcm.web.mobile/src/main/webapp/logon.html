@@ -21,7 +21,7 @@
             .script("libs/app.js").wait()
             .script("libs/common.js").wait()
             .script("scripts/logon.js").wait(function () {
-            	App.initView = function () {
+                App.initView = function () {
                     App.trigger("openView", "logon", 0);
                 };
                 App.init();

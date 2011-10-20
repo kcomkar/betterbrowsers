@@ -8,141 +8,26 @@
                 <li class="card">
                     <h3>Customer Information</h3>
                     <div class="customer_info">
-                        <div class="company_name">Rolf &amp; Sons Materials</div>
-                        <div class="address1">2257 Industrial Way</div>
-                        <div class="address2">Flagstaff AZ 86002</div>
-                        <div class="state">USA</div>
-                        <ul class="detail">
-                            <li>
-                                <div class="label">Customer No.</div>
-                                <div class="value">32-187</div>
-                            </li>
-                            <li>
-                                <div class="label">Customer Code</div>
-                                <div class="value">1005 - Feldman Supplies Inc.</div>
-                            </li>
-                            <li>
-                                <div class="label">Payment Behavior</div>
-                                <div class="value"><span>Very Bad</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Credit Rating</div>
-                                <div class="value">BB</div>
-                            </li>
-                        </ul>
+                        
                     </div>
                 </li>
                 <li class="card">
                     <h3>Accounts Receivable Overview</h3>
                     <div class="overview">
-                        <ul class="detail">
-                            <li>
-                                <div class="label">Overdue Amount</div>
-                                <div class="value"><span class="amount">873,597.33</span> <span class="currency">EUR</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Days Sales Outstanding</div>
-                                <div class="value">70 days</div>
-                            </li>
-                            <li>
-                                <div class="label">Open Amount</div>
-                                <div class="value"><span class="amount">1,237,588.92</span> <span class="currency">EUR</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Interest Loss</div>
-                                <div class="value"><span class="amount">2,685.42</span> <span class="currency">EUR</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Dunning Level</div>
-                                <div class="value">3</div>
-                            </li>
-                            <li>
-                                <div class="label">Last Dunning</div>
-                                <div class="value">09/12/2011</div>
-                            </li>
-                        </ul>
+                        
                     </div>
                 </li>
                 <li class="card">
                     <h3>Financial Details</h3>
                     <div class="financial">
-                        <ul class="detail">
-                            <li>
-                                <div class="label">Revenue Last Year</div>
-                                <div class="value">873,597.33 <span class="currency">EUR</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Promised Amount</div>
-                                <div class="value">872, 588.43 <span class="currency">EUR</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Broken Promise to Pay</div>
-                                <div class="value">1,237,588.92 <span class="currency">EUR</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Disputed Amount</div>
-                                <div class="value">2,685.42 <span class="currency">EUR</span></div>
-                            </li>
-                            <li>
-                                <div class="label">Manual Clearing Ratio</div>
-                                <div class="value ratio">
-                                    <div class="ratioview">
-                                        <div class="gradient_bar"><div class="ratio_indicator">^</div></div>
-                                    </div>
-                                    <div class="ratio_value">0.68</div>
-                                </div>
-                            </li>
-                        </ul>
+
                     </div>
                 </li>
                 <li class="card">
                     <h3>Outstanding Invoices</h3>
-                    <ul class="invoices">
-                        <li>
-                            <div class="info">
-                                <div class="item">
-                                    <div class="item_no">00367724</div>
-                                    <div class="amount">46, 711.82</div>
-                                    <div class="currency">USD</div>
-                                </div>
-                                <div class="date">Due 08/12/2011</div>
-                            </div>
-                            <a href="javascript:;" class="action">&gt;</a>
-                        </li>
-                        <li>
-                            <div class="info">
-                                <div class="item">
-                                    <div class="item_no">00367724</div>
-                                    <div class="amount">46, 711.82</div>
-                                    <div class="currency">USD</div>
-                                </div>
-                                <div class="date">Due 08/12/2011</div>
-                            </div>
-                            <a href="javascript:;" class="action">&gt;</a>
-                        </li>
-                        <li>
-                            <div class="info">
-                                <div class="item">
-                                    <div class="item_no">00367724</div>
-                                    <div class="amount">46, 711.82</div>
-                                    <div class="currency">USD</div>
-                                </div>
-                                <div class="date">Due 08/12/2011</div>
-                            </div>
-                            <a href="javascript:;" class="action">&gt;</a>
-                        </li>
-                        <li>
-                            <div class="info">
-                                <div class="item">
-                                    <div class="item_no">00367724</div>
-                                    <div class="amount">46, 711.82</div>
-                                    <div class="currency">USD</div>
-                                </div>
-                                <div class="date">Due 08/12/2011</div>
-                            </div>
-                            <a href="javascript:;" class="action">&gt;</a>
-                        </li>
-                    </ul>
+                    <div class="invoices">
+                        <div class="invoices_scroller"></div>
+                    </div>
                 </li>
             </ul>
         </div>

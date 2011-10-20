@@ -347,6 +347,20 @@
         }
     };
 
+    var getTemplateFromDOM = function (name, callback) {
+        var template = App._templates[name];
+        if (template) {
+            
+        } else {
+            var prefix = "tmpl_";
+            var node = $("#" + prefix + name);
+            if (node.length) {
+                App._templates[name] = template = node.html();
+                callback(template);
+            }
+        }
+    };
+
     var getTemplateOptimized = function (name, callback) {
         var template = App._templates[name];
         if (template) {

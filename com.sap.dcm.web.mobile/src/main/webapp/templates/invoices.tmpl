@@ -1,0 +1,15 @@
+<ul>
+<% _.each(invoiceHeaders, function (item, index) {%>
+    <li data-doc_no="<%=item.docNumber%>">
+        <div class="info">
+            <div class="item">
+                <div class="item_no"><%=item.docNumber%></div>
+                <div class="amount"><%=item.amount%></div>
+                <div class="currency">USD</div>
+            </div>
+            <div class="date">Due <%=item.dueDate%></div>
+        </div>
+        <a href="javascript:;" class="action">&gt;</a>
+    </li>
+<%});%>
+</ul>

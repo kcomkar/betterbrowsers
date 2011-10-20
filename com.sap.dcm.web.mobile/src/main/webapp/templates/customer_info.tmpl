@@ -1,0 +1,22 @@
+<div class="company_name"><%=customerKPI.customerName%></div>
+<div class="address1"><%=customerKPI.address%></div>
+<div class="address2"></div>
+<div class="state"></div>
+<ul class="detail">
+    <li>
+        <div class="label">Customer No.</div>
+        <div class="value"><%=customerKPI.custtomerId%></div>
+    </li>
+    <li>
+        <div class="label">Customer Code</div>
+        <div class="value"><%=customerKPI.companyCode%></div>
+    </li>
+    <li>
+        <div class="label">Payment Behavior</div>
+        <div class="value"><span class="<%=customerKPI.paymentBehavior%>"><%=customerKPI.paymentBehavior%></span></div>
+    </li>
+    <li>
+        <div class="label">Credit Rating</div>
+        <div class="value"><%=customerKPI.creditRating%></div>
+    </li>
+</ul>

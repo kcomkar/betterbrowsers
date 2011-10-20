@@ -3,7 +3,7 @@
     height: 43px;
     width: 100%;
     top: 0;
-    z-index: 2;
+    z-index: 6;
     background-color: #6d6d6e;
     background-image: -webkit-gradient(linear, 0 0, 0 100%,
         color-stop(0, #6d6d6e),
@@ -16,14 +16,13 @@
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
-
 }
 #detail article {
     top: 43px;
     bottom: 52px;
     width: 100%;
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     overflow: hidden;
 }
 #detail article .scroller {
@@ -39,11 +38,12 @@
 #detail article .detail_info li.card {
     width: 25%;
     height: 100%;
+    position: relative;
 }
 #detail .indicator {
     position: absolute;
     bottom: 10px;
-    z-index: 2;
+    z-index: 6;
     width: 100%;
     display: -webkit-box;
     -webkit-box-pack: center;
@@ -71,7 +71,7 @@
     position: absolute;
     height: 52px;
     bottom: 0;
-    z-index: 2;
+    z-index: 6;
     background-image: -webkit-gradient(linear, 0 0, 0 100%,
         color-stop(0, #6d6d6e),
         color-stop(0.5, #3c3c3c),
@@ -168,6 +168,12 @@
 }
 #detail .invoices {
     padding: 0 14px;
+    position: absolute;
+    top: 24px;
+    width: 100%;
+    bottom: 0;
+    z-index: 4;
+    -webkit-box-sizing: border-box;
 }
 #detail .invoices li {
     display: -webkit-box;
