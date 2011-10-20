@@ -5,71 +5,142 @@
     <article>
         <div class="scroller">
             <ul class="detail_info">
-                <li>
+                <li class="card">
                     <h3>Customer Information</h3>
-                    <div>Rolf &amp; Sons Materials</div>
-                    <div class="address1">2257 Industrial Way</div>
-                    <div class="address2">Flagstaff AZ 86002</div>
-                    <div class="state">USA</div>
-                    <div></div>
+                    <div class="customer_info">
+                        <div class="company_name">Rolf &amp; Sons Materials</div>
+                        <div class="address1">2257 Industrial Way</div>
+                        <div class="address2">Flagstaff AZ 86002</div>
+                        <div class="state">USA</div>
+                        <ul class="detail">
+                            <li>
+                                <div class="label">Customer No.</div>
+                                <div class="value">32-187</div>
+                            </li>
+                            <li>
+                                <div class="label">Customer Code</div>
+                                <div class="value">1005 - Feldman Supplies Inc.</div>
+                            </li>
+                            <li>
+                                <div class="label">Payment Behavior</div>
+                                <div class="value"><span>Very Bad</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Credit Rating</div>
+                                <div class="value">BB</div>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
+                <li class="card">
                     <h3>Accounts Receivable Overview</h3>
-                    <dl>
-                        <dt>Overdue Amount</dt>
-                        <dd>873,597.33 EUR</dd>
-                        <dt>Days Sales Outstanding</dt>
-                        <dd>70 days</dd>
-                        <dt>Open Amount</dt>
-                        <dd>1,237,588.92 EUR</dd>
-                        <dt>Interest Loss</dt>
-                        <dd>2,685.42 EUR</dd>
-                        <dt>Dunning Level</dt>
-                        <dd>3</dd>
-                        <dt>Last Dunning</dt>
-                        <dd>09/12/2011</dd>
-                    </dl>
+                    <div class="overview">
+                        <ul class="detail">
+                            <li>
+                                <div class="label">Overdue Amount</div>
+                                <div class="value"><span class="amount">873,597.33</span> <span class="currency">EUR</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Days Sales Outstanding</div>
+                                <div class="value">70 days</div>
+                            </li>
+                            <li>
+                                <div class="label">Open Amount</div>
+                                <div class="value"><span class="amount">1,237,588.92</span> <span class="currency">EUR</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Interest Loss</div>
+                                <div class="value"><span class="amount">2,685.42</span> <span class="currency">EUR</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Dunning Level</div>
+                                <div class="value">3</div>
+                            </li>
+                            <li>
+                                <div class="label">Last Dunning</div>
+                                <div class="value">09/12/2011</div>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
-                <li>
+                <li class="card">
                     <h3>Financial Details</h3>
-                    <dl>
-                        <dt>Revenue Last Year</dt>
-                        <dd>873,597.33 EUR</dd>
-                        <dt>Promised Amount</dt>
-                        <dd>872, 588.43 EUR</dd>
-                        <dt>Broken Promise to Pay</dt>
-                        <dd>1,237,588.92 EUR</dd>
-                        <dt>Disputed Amount</dt>
-                        <dd>2,685.42 EUR</dd>
-                        <dt>Manual Clearing Ratio</dt>
-                        <dd>0.68</dd>
-                    </dl></li>
-                <li>
+                    <div class="financial">
+                        <ul class="detail">
+                            <li>
+                                <div class="label">Revenue Last Year</div>
+                                <div class="value">873,597.33 <span class="currency">EUR</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Promised Amount</div>
+                                <div class="value">872, 588.43 <span class="currency">EUR</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Broken Promise to Pay</div>
+                                <div class="value">1,237,588.92 <span class="currency">EUR</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Disputed Amount</div>
+                                <div class="value">2,685.42 <span class="currency">EUR</span></div>
+                            </li>
+                            <li>
+                                <div class="label">Manual Clearing Ratio</div>
+                                <div class="value ratio">
+                                    <div class="ratioview">
+                                        <div class="gradient_bar"><div class="ratio_indicator">^</div></div>
+                                    </div>
+                                    <div class="ratio_value">0.68</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="card">
                     <h3>Outstanding Invoices</h3>
-                    <ul>
+                    <ul class="invoices">
                         <li>
-                            <div class="info"></div>
-                            <a href="" class="action"></a>
+                            <div class="info">
+                                <div class="item">
+                                    <div class="item_no">00367724</div>
+                                    <div class="amount">46, 711.82</div>
+                                    <div class="currency">USD</div>
+                                </div>
+                                <div class="date">Due 08/12/2011</div>
+                            </div>
+                            <a href="javascript:;" class="action">&gt;</a>
                         </li>
                         <li>
-                            <div class="info"></div>
-                            <a href="" class="action"></a>
+                            <div class="info">
+                                <div class="item">
+                                    <div class="item_no">00367724</div>
+                                    <div class="amount">46, 711.82</div>
+                                    <div class="currency">USD</div>
+                                </div>
+                                <div class="date">Due 08/12/2011</div>
+                            </div>
+                            <a href="javascript:;" class="action">&gt;</a>
                         </li>
                         <li>
-                            <div class="info"></div>
-                            <a href="" class="action"></a>
+                            <div class="info">
+                                <div class="item">
+                                    <div class="item_no">00367724</div>
+                                    <div class="amount">46, 711.82</div>
+                                    <div class="currency">USD</div>
+                                </div>
+                                <div class="date">Due 08/12/2011</div>
+                            </div>
+                            <a href="javascript:;" class="action">&gt;</a>
                         </li>
                         <li>
-                            <div class="info"></div>
-                            <a href="" class="action"></a>
-                        </li>
-                        <li>
-                            <div class="info"></div>
-                            <a href="" class="action"></a>
-                        </li>
-                        <li>
-                            <div class="info"></div>
-                            <a href="" class="action"></a>
+                            <div class="info">
+                                <div class="item">
+                                    <div class="item_no">00367724</div>
+                                    <div class="amount">46, 711.82</div>
+                                    <div class="currency">USD</div>
+                                </div>
+                                <div class="date">Due 08/12/2011</div>
+                            </div>
+                            <a href="javascript:;" class="action">&gt;</a>
                         </li>
                     </ul>
                 </li>
@@ -84,9 +155,9 @@
             </ul>
         </nav>
     </article>
-    <footer class="toolbar">
+    <footer>
         <!-- operation button here without localization-->
-        <nav>
+        <nav class="toolbar">
             <ul>
                 <li><a class="show_hitlist" href="">Hit List</a></li>
                 <li><a class="show_contact" href="">Contact</a></li>
