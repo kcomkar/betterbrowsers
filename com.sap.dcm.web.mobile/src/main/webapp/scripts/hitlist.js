@@ -7,7 +7,7 @@ App.registerPage("hitlist", function () {
         //fetch data from the given url
         listView.fetchData = function (url) {
             $.getJSON("ajax/"+ url +".json", function (data) {
-                proxy.trigger("data", data.results);
+                proxy.trigger("data", data.collectionOverviewResponse);
             });
         };
         listView.fetchData("hitlist");
@@ -23,8 +23,10 @@ App.registerPage("hitlist", function () {
             var tabviewNode = listView.$(".collection").addClass("tab-panel");
             
             var modules = [];
-            _.each(data, function (module) {
+            _.each(data, function (array) {
+                var module = {};
                 module.context = page;
+                module.data = array;
                 modules.push(new App.TabModule(module));
             });
             var navTabView = new AppUI.TabView(tabviewNode, modules);
@@ -34,11 +36,12 @@ App.registerPage("hitlist", function () {
         listView.bind("showDetail", function (event) {
             var target = $(event.currentTarget);
             var itemId = target.data("id");
+            console.log("show detail--id=" + itemId);
             page.openView("detail/" + itemId, false);
         });
         
         listView.delegateEvents({
-            "li.item": "showDetail"
+            "click li.item": "showDetail"
         });
         
     };
