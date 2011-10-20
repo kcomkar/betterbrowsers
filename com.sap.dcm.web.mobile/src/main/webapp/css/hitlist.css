@@ -1,6 +1,22 @@
+
 #hitlist header {
     display: -webkit-box;
     -webkit-box-align: center;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0,   #58585B),
+            color-stop(0.45, #333333),
+            color-stop(1, #000000));
+    background-repeat: no-repeat;
+    height: 44px;
+    z-index: 100;
+}
+
+#hitlist header h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0 0 0px;
 }
 
 #hitlist .preference {
@@ -18,7 +34,15 @@
     -webkit-box-flex: 1;
 }
 
-#hitlist nav ul {
+#hitlist .tab-panel nav {
+    height: 55px;
+    overflow: hidden;
+    position: absolute;
+    top: 44px;
+    width: 100%;
+}
+
+#hitlist .tabs {
     background-color: #FFA500;
     height: 100%;
     display: -webkit-box;
@@ -26,12 +50,6 @@
     -webkit-box-pack: center;
     margin: 0;    
 }
-
-#hitlist nav li {
-    background: transparent;
-}
-
-
 
 #hitlist nav li:first-child a {
     border-top-left-radius: 8px;
@@ -43,23 +61,79 @@
     border-bottom-right-radius: 8px;
 }
 
-#hitlist nav li a {
+#hitlist .tab-panel {
+}
+
+#hitlist .tab-panel .panel {
+    display: none;
+}
+
+#hitlist .tab-panel .panel.active {
+    display: block;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    -moz-box-shadow: 0 -1px 3px #000;
+    -webkit-box-shadow: 0 -1px 3px #000;
+    box-shadow: 0 -1px 3px #000;
+    position: absolute;
+    z-index: 1;
+}
+#hitlist .tab-panel .tabs {
+    display: -webkit-box;
+}
+
+#hitlist .tab-panel .tabs li {
+    width: 30%;
+    height: 45px;
+    text-align: center;
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    background: transparent;
+    border-right: 1px solid gray;
+}
+
+#hitlist .tab-panel .tabs li:last-child {
+    border: none;
+}
+
+#hitlist .tabs li.active a {
+     background-image: -webkit-gradient(linear,left top,left bottom,
+        color-stop(0, #575962),
+        color-stop(0.5, #292A37),
+        color-stop(1, #2F303E));
+    color: #fff;
+}
+
+#hitlist .tabs a {
+    color: #000;
     display: -webkit-box;
     height: 100%;
-    width: 99%;
+    width: 100%;
+    font-weight: bold;
     box-sizing: border-box;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, #888), color-stop(0.5, #999), color-stop(1, #aaa));
 }
 
-#hitlist nav li.active a {
-    background-image: -webkit-gradient(linear,left top,left bottom,
-        color-stop(0, #575962),
-        color-stop(0.5, #292A37),
-        color-stop(1, #2F303E));
+#hitlist .tab-panel .tabs a:hover {
+    text-decoration: none;
     color: #fff;
 }
+
+#hitlist .tab-panel .panels {
+    bottom: 0;
+    position: absolute;
+    top: 99px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #DFE0E3;
+}
+
 #hitlist .tab-panel .panel ul {
     width: 100%;
 }
@@ -89,18 +163,3 @@
     color: blue;
     -webkit-box-flex: 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
