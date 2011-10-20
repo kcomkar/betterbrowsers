@@ -1,0 +1,94 @@
+#logon{
+	background-color: gray;
+}
+#logon article {
+    top: 50px;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#logon article .logon_info
+{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	height:100%;
+}
+
+#logon .logon_info .form_view {
+	
+}
+#logon .form_view .logon_controls{
+	margin: auto;
+	width:230px;
+}
+
+#logon .logon_info .footer {
+	-webkit-box-flex: 1;
+	position: relative;
+	overflow: hidden;
+}
+
+#logon .footer .footer_content{
+    position: absolute;
+	bottom: 10px;
+}
+
+
+#logon article .Logon_title
+{
+	width:100%;
+	background-color:#e0a000;
+	font-size: 30pt;
+	color:gray;
+	text-align:center;
+	font-weight:700;
+}
+
+#logon article .listview
+{
+	padding-top:20px;
+	width:100%;
+}
+
+#logon li{
+	font-size:12pt;
+	color:white;
+	padding-top:4px;
+}
+
+#logon li input{
+	width:100%;
+}
+#logon .logon_button
+{
+	padding-top:15px;
+	text-align: center;
+}
+
+#logon #logon_button{
+	width:100px;
+	height:30px;
+	font-size:12pt;
+	color:white;
+}
+
+#logon .footer .logon_bottomBigfont
+{
+    font-size:12pt;
+    color:dark;
+    font-weight:700;
+}
+#logon .footer .logon_bottomSmallfont
+{
+    font-size:10pt;
+    color:dark;
+}
+#logon .footer .logon_img
+{
+	background-image: url("../images/loading.png");
+	background-repeat: no-repeat;
+}

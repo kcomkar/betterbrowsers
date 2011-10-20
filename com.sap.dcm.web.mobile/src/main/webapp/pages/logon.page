@@ -1,36 +1,36 @@
-<section id="note" class="page">
-    <header>
-        <a class="done">Done</a>
-        <div class="title">logon</div>
-        <a class="add"></a>
-    </header>
+<section id="logon" class="page">
     <article>
   <div class="logon_info">
+  <div class="form_view">
     <div class = "Logon_title">Collection Hit List</div>
+    <div class="logon_controls">
     <ul class="listview">
-        <li class="username">
+        <li>
             <label for="username"><i></i>{{username}}</label>
-            <input type="text" name="username" id="username" value="" placeholder="username"/>
         </li>
-        <li class="password">
+        <li>
+            <input type="text" name="username" id="username" value="" placeholder=""/>
+        </li>
+        <li>
             <label for="password"><i></i>{{password}}</label>
-            <input type="password" name="password" id="password" value="" placeholder="password"/>
         </li>
-        <li class="remember">
-            <label for="rememberme"><i></i>{{rememberme}}</label>
-            <select name="rememberme" id="rememberme" class="slider">
-                <option value="no">{{no}}</option>
-                <option value="yes">{{yes}}</option>
-            </select>
+        <li>
+            <input type="password" name="password" id="password" value="" placeholder=""/>
         </li>
     </ul>
 	<!-- Login Button -->
-    <div class="logon">
+    <div class="logon_button">
         <input id="logon_button" name="{{logon}}" value="logon" type="button" />
     </div>
+    </div>
+  </div>
+    <div class="footer">
+    <div class="footer_content">
     <div class="logon_bottomBigfont">SAP Dynamic Cash Management</div>
-    <div class="logon_bottomSamllfont">POWERED BY SAP HAHA</div>
+    <div class="logon_bottomSmallfont">POWERED BY SAP HAHA</div>
     <div class="logon_img"><img/></div>
+    </div>
+    <div>
 </div>
     </article>
 </section>
