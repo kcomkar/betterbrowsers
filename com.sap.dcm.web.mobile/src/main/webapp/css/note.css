@@ -1,0 +1,91 @@
+#note .header {
+    display: -webkit-box;
+    height: 44px;
+    -webkit-box-align: center;
+    padding: 0 10px;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0, #888),
+            color-stop(0.45, #666),
+            color-stop(0.47, #444),
+            color-stop(1, #000000));
+}
+
+#note .header .done {
+    padding: 7px;
+    border: 1px solid gray;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 1px -1px 1px #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0, #888),
+            color-stop(0.45, #666),
+            color-stop(0.47, #444),
+            color-stop(1, #000000));
+    box-shadow: 0px 1px 0px #888;
+}
+
+#note .header .done:hover{
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #888), color-stop(0.5, #999), color-stop(1, #aaa));
+    text-decoration: none;
+}
+
+
+#note .header .title {
+    -webkit-box-flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+#note .header .add {
+    color: #aaa;
+}
+
+#note .notes_set {
+    position: absolute;
+    top: 44px;
+    width: 100%;
+    bottom: 0;
+}
+
+#note .notes_set ul {
+    padding: 10px;	
+}
+
+#note .notes_set .scroll_wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#note .notes_set .record {
+    
+}
+
+.notes_set .record .account {
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+
+.notes_set .record .account .name {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.notes_set .record .account .time {
+    text-align: right;
+    font-size: 16px;
+    color: gray;
+    -webkit-box-flex: 1;
+}
+
+.notes_set .record .content {
+    font-size: 14px;
+    line-height: 130%;
+}

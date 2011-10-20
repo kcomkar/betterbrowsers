@@ -1,10 +1,12 @@
 <section id="note" class="page">
     <header>
-        <a class="done">Done</a>
-        <div class="title">Notes</div>
-        <a class="add"></a>
+        <div class="header">
+	        <a class="done">Done</a>
+	        <div class="title">Notes</div>
+	        <a class="add">Add</a>
+	    </div>
     </header>
     <article>
-    
+        <div class="notes_set"></div>
     </article>
 </section>
