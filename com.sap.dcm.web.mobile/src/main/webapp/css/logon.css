@@ -73,8 +73,9 @@
 {
 	padding-top:10px;
 	color:red;
-	text-align:center;
 	font-weight:700;
+	display: -webkit-box;
+    -webkit-box-pack: center;
 }
 #logon #logon_button{
 	width:100px;
