@@ -92,16 +92,16 @@
 
             // Handle refresh case or first visit.
             if (App.hashHistory.length === 0) {
-                var map = App.hashMap;
-                if (_.size(map)) {
+                //var map = App.hashMap;
+                // if (_.size(map)) {
                     // Restore view from session.
-                    console.log("Restore from session.");
-                    App.restoreViews();
-                } else {
+                    // console.log("Restore from session.");
+                    // App.restoreViews();
+                // } else {
                     // Init view.
                     console.log("Init view.");
                     App.initView();
-                }
+                // }
             }
         });
     };
@@ -549,10 +549,25 @@
 (function (global) {
     var App = global.App;
 
+    var _remappingLangCode = function (language) {
+        // The map predefined for re-mapping local code.
+        var langReMap = {"en": "en-us", "zh": "zh-cn"};
+        // The map predefined for supports.
+        var predefined = {"en-us": true, "zh-cn": true};
+        var lang = language.toLowerCase();
+        if (langReMap.hasOwnProperty(lang)) {
+            lang = langReMap[lang];
+        }
+        if (!predefined.hasOwnProperty(lang)) {
+            lang = "en-us";
+        }
+        return lang;
+    };
+
     /**
-     * @description Local code.
+     * @description Local code(after re-mapping).
      */
-    App.langCode = "en-US";
+    App.langCode = _remappingLangCode(navigator.language);
 
     /**
      * @description All localization resources will be stored at here by locale code.

@@ -16,6 +16,7 @@ App.registerPage("detail", function () {
         });
 
         $.getJSON("ajax/detail.json", function (data) {
+            data.collectionDetailResponse.invoiceHeaders = data.collectionDetailResponse.invoiceHeaders || [];
             proxy.trigger("data", data.collectionDetailResponse);
         });
 
