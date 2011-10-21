@@ -1,6 +1,7 @@
 {
     "collectionOverviewResponse": {
-        "dso": [
+        "currentUser": "",
+        "dsoList": [
             {
                 "customerId": "0000105511",
                 "customerName": "Serv Mgmt TPVS Customer 1",
@@ -52,7 +53,7 @@
                 "dso": 238
             }
         ],
-        "openAmount": [
+        "openAmountList": [
             {
                 "customerId": "0945970001",
                 "customerName": "Joanne Canela",
@@ -104,7 +105,7 @@
                 "openAmount": 4304481.02
             }
         ],
-        "interestLoss": [
+        "interestLossList": [
             {
                 "customerId": "0000105472",
                 "customerName": "Hever Industrial UK",

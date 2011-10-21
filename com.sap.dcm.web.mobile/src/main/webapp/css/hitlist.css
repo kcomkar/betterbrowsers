@@ -3,11 +3,12 @@
     display: -webkit-box;
     -webkit-box-align: center;
     background-image: -webkit-gradient(linear, left top, left bottom,
-            color-stop(0,   #58585B),
-            color-stop(0.45, #333333),
+            color-stop(0, #888),
+            color-stop(0.45, #666),
+            color-stop(0.47, #444),
             color-stop(1, #000000));
     background-repeat: no-repeat;
-    height: 52px;
+    height: 44px;
     z-index: 100;
 }
 
@@ -16,7 +17,6 @@
     font-weight: bold;
     color: #fff;
     text-align: center;
-    padding: 10px 0 0 0px;
 }
 
 #hitlist .preference {
@@ -35,15 +35,15 @@
 }
 
 #hitlist .tab-panel nav {
-    height: 47px;
+    height: 44px;
     overflow: hidden;
     position: absolute;
-    top: 52px;
+    bottom: 0;
     width: 100%;
 }
 
 #hitlist .tabs {
-    background-color: #FFA500;
+    background-color: #030303;
     height: 100%;
     display: -webkit-box;
     -webkit-box-align: center;
@@ -125,9 +125,9 @@
 }
 
 #hitlist .tab-panel .panels {
-    bottom: 0;
+    bottom: 44px;
     position: absolute;
-    top: 99px;
+    top: 44px;
     right: 0;
     left: 0;
     z-index: 1;
@@ -136,6 +136,12 @@
 
 #hitlist .tab-panel .panel ul {
     width: 100%;
+}
+
+#hitlist .tab-panel .panel .no_records {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
 }
 
 #hitlist .panel li.item {

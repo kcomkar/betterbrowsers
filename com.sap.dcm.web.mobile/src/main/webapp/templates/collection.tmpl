@@ -1,4 +1,7 @@
 <ul>
+    <% if (!_.size(data)) { %>
+        <div class="no_records">No Records</div>
+    <% }; %>
     <% _.each(data, function (item) { %>
     <li class="item" data-id="<%=item.customerId%>">
         <% _.each(item, function (val, key) { %>

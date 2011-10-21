@@ -23,12 +23,14 @@ App.registerPage("hitlist", function () {
             var tabviewNode = listView.$(".collection").addClass("tab-panel");
             
             var modules = [];
-            _.each(data, function (array) {
+            var tabs = ["dsoList", "openAmountList", "interestLossList"];
+            _.each(tabs, function(prop) {
                 var module = {};
                 module.context = page;
-                module.data = array;
+                module.data = data[prop] || [];
                 modules.push(new App.TabModule(module));
             });
+            
             var navTabView = new AppUI.TabView(tabviewNode, modules);
         });
         
