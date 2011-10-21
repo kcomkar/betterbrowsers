@@ -23,7 +23,7 @@
 }
 #logon .form_view .logon_controls{
 	margin: auto;
-	width:230px;
+	width:200px;
 }
 
 #logon .logon_info .footer {
@@ -38,11 +38,11 @@
 }
 
 
-#logon article .Logon_title
+#logon article .logon_title
 {
 	width:100%;
 	background-color:#e0a000;
-	font-size: 30pt;
+	font-size: 20pt;
 	color:gray;
 	text-align:center;
 	font-weight:700;
@@ -55,7 +55,7 @@
 }
 
 #logon li{
-	font-size:12pt;
+	font-size:9pt;
 	color:white;
 	padding-top:4px;
 }
@@ -76,19 +76,21 @@
 	color:white;
 }
 
-#logon .footer .logon_bottomBigfont
+#logon .footer .logon_productname
 {
-    font-size:12pt;
+    font-size:10pt;
     color:dark;
     font-weight:700;
 }
-#logon .footer .logon_bottomSmallfont
+#logon .footer .logon_productcompany
 {
-    font-size:10pt;
+    font-size:9pt;
     color:dark;
 }
 #logon .footer .logon_img
 {
 	background-image: url("../images/loading.png");
 	background-repeat: no-repeat;
+	height:20px;
+	width:30px;
 }

@@ -2,7 +2,7 @@
     <article>
   <div class="logon_info">
   <div class="form_view">
-    <div class = "Logon_title">Collection Hit List</div>
+    <div class = "logon_title">Collection Hit List</div>
     <div class="logon_controls">
     <ul class="listview">
         <li>
@@ -26,8 +26,8 @@
   </div>
     <div class="footer">
     <div class="footer_content">
-    <div class="logon_bottomBigfont">SAP Dynamic Cash Management</div>
-    <div class="logon_bottomSmallfont">POWERED BY SAP HAHA</div>
+    <div class="logon_productname">SAP Dynamic Cash Management</div>
+    <div class="logon_productcompany">POWERED BY SAP HAHA</div>
     <div class="logon_img"><img/></div>
     </div>
     <div>
