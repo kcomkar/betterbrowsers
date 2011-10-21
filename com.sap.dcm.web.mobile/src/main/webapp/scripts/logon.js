@@ -12,15 +12,22 @@ App.registerPage("logon", function () {
             var password = logonView.$("#password").val();
             if (username && password) {
                 logonButton.data("ajax", "pending");
-                $.post("rest/mobile/mobLoginService/login",
-                		"username="+username+"&&password="+password,
-                		function (data) {
-                    logonButton.data("ajax", "complete");
-                    if (data.loggedIn = "true") {
-                        location.href = "index.html";
+                $.ajax({
+                	type:'POST',
+                	url:'rest/mobile/mobLoginService/login',
+                	data:{"username":username,"password":password },
+                	dataType:'json',
+                	success:function (data) {
+                        logonButton.data("ajax", "complete");
+                        if (data.mobLoginStatus.loggedIn == true) {
+                            	location.href = "index.html";
+                            }
+                            else{
+                            	logonView.$("#errormessage")[0].innerText= data.mobLoginStatus.loginMessage;
+                            }
+                        console.log(data); 
                     }
-                    console.log(data); 
-                }, "application/x-www-form-urlencoded");
+                });
             } else {
 //                if(! dialog) {
 //                    dialog = new Widget.Dialog();
