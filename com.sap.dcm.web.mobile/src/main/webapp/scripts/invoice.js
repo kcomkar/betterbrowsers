@@ -25,6 +25,14 @@ App.registerPage("invoice", function () {
         // });
         
         proxy.trigger("data", {});
+        
+        view.bind("closeViewport", function (event) {
+            page.closeViewport();
+        });
+
+        view.delegateEvents({
+            "click header .action": "closeViewport"
+        });
     };
 
     return {

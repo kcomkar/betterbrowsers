@@ -232,7 +232,7 @@
 }
 #detail .toolbar a {
     display: -webkit-box;
-    -webkit-box-pack: center;
+    text-align: center;
     -webkit-box-align: center;
     height: 52px;
     color: #787878;

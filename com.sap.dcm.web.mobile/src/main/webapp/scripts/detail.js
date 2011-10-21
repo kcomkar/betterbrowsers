@@ -90,9 +90,14 @@ App.registerPage("detail", function () {
             page.openView("note");
         });
 
+        detailView.bind("viewDetail", function (event) {
+            page.openViewport("invoice");
+        });
+
         detailView.delegateEvents({
             "click .show_contact": "showContact",
-            "click .show_notes": "goNote"
+            "click .show_notes": "goNote",
+            "click .invoices .action": "viewDetail"
         });
     };
 
