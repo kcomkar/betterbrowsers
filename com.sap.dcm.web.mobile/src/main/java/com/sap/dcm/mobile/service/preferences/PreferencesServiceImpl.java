@@ -36,6 +36,7 @@ public class PreferencesServiceImpl implements IPreferencesService,ApplicationCo
 		}
 	}
 
+	
 	public void setApplicationContext(ApplicationContext applicationContext)
 			throws BeansException {
 		this.context = applicationContext;
@@ -43,6 +44,21 @@ public class PreferencesServiceImpl implements IPreferencesService,ApplicationCo
 
 	public ApplicationContext getContext() {
 		return context;
+	}
+
+
+	public Response updatePreferences(String currency, String companyCode) {
+		try{
+			PreferencesDao dao = (PreferencesDao)this.getContext().getBean("preferencesDao");
+			dao.updatePreferences(currency, companyCode);
+			
+			return Response.ok().build();
+			
+		}
+		catch(Exception e){
+			e.printStackTrace();
+			return Response.serverError().build();
+		}
 	}
 
 	
