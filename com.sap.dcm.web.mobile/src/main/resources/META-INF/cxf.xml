@@ -38,5 +38,6 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     	class="org.apache.cxf.bus.spring.Jsr250BeanPostProcessor"/>    
     <bean id="org.apache.cxf.bus.spring.BusExtensionPostProcessor" 
     	class="org.apache.cxf.bus.spring.BusExtensionPostProcessor"/>
-
+	
+	
 </beans>

@@ -2,13 +2,28 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+							http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 	   					   http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 	   					   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<import resource="classpath:META-INF/cxf.xml" />
 	
 	<import resource="security.xml" />
+	
+	<util:list id="propertiesTobeSerializedAsArray">
+		<value>notes</value>
+		<value>invoiceHeaders</value>
+		<value>dsoList</value>
+		<value>openAmountList</value>
+		<value>interestLossList</value>
+		<value>currencySearchHelp</value>
+	</util:list>
+	<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.JSONProvider">
+		<property name="serializeAsArray" value="true"/>
+		<property name="arrayKeys" ref="propertiesTobeSerializedAsArray"/>
+	</bean>
 	
 	<jaxrs:server id="restSeviceContainer" address="/">
 		<jaxrs:serviceBeans>
@@ -18,15 +33,18 @@
 			<ref bean="loginService" />
 			<ref bean="usrMgmtService" /> -->
 			<ref bean="mobloginService" />
+			<ref bean="mobCollectionService" />
+			<ref bean="mobPreferencesService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<bean id="secExcepMapper" class="com.sap.dcm.web.exception.mapper.SecurityExceptionMapper"/>
 			<!-- <bean id="cacheHandler" class="com.sap.dcm.web.core.CacheControlResponseHandler" /> -->
+			<ref bean="jsonProvider"/>
 		</jaxrs:providers>
 	</jaxrs:server>
 
 	<!-- REST Beans -->
-	<bean id="mobloginService" class=" com.sap.dcm.mobile.service.login.MobLoginServiceImpl">
+	<bean id="mobloginService" class="com.sap.dcm.mobile.service.login.MobLoginServiceImpl">
 		<property name="provider" ref="customAuthenticationProvider" />
 		<property name="requiredRoles">
 			<set>
@@ -34,6 +52,15 @@
 			</set>
 		</property>
 	</bean>
+	
+	<bean id="mobCollectionService" class="com.sap.dcm.mobile.service.collection.CollectionServiceImpl">
+		
+	</bean>
+	
+	<bean id="mobPreferencesService" class="com.sap.dcm.mobile.service.preferences.PreferencesServiceImpl">
+		
+	</bean>
+	
 	<!-- <bean id="uiService" class="com.sap.dcm.web.ui.impl.UIServiceBean">
 		<property name="pageProvider" ref="uiPageProvider" />
 		<property name="userService" ref="usrMgmtService" />
@@ -48,6 +75,12 @@
 		<property name="provider" ref="customAuthenticationProvider" />
 	</bean>  -->
 
+	<!-- DAO Bean -->
+	<bean id="collectionOverviewDao" class="com.sap.dcm.mobile.dao.collection.CollectionOverviewDao">
+	</bean>
+	<bean id="preferencesDao" class="com.sap.dcm.mobile.dao.settings.PreferencesDao">
+	</bean>
+	
 	<!-- UI Beans -->
 	<bean id="uiPageProvider"
 		class="com.sap.dcm.web.ui.pages.impl.UIPageProviderBean">
@@ -66,6 +99,9 @@
 		</property>
 		<property name="schema" value="classpath:ui/uiPage.xsd" />
 	</bean>
+	
+
+	
 	
 	<!-- Data Source -->
 	<bean id="dataSource" class="com.sap.db.jdbcext.DataSourceSAP">

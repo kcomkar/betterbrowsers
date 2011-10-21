@@ -50,9 +50,14 @@ public class UserUtils {
 	public static HanaUserDetails getPrincipal() throws AuthenticationException {
 		
 		Authentication a = SecurityContextHolder.getContext().getAuthentication();
+		// musst be called in a protected url
+		//other wise, you can not get logged in authroization
+		System.out.println("SecurityContextHolder.getContext().getAuthentication()" + a);
 		
 		if(a != null){
 			Object o = a.getPrincipal();
+			System.out.println(o.getClass());
+			System.out.println(o);
 		if (o instanceof HanaUserDetails) {
 			return ((HanaUserDetails) o);
 		} else {
