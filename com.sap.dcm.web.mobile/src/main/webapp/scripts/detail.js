@@ -1,9 +1,10 @@
 App.registerPage("detail", function () {
-    var initialize = function (itemId) {
+    var initialize = function (customerId) {
         var page = this;
         var detailView = new App.View(page.node);
         var indicator = detailView.$(".indicator");
         var proxy = new EventProxy();
+        var contactDialog;
 
         page.scroll = new iScroll(detailView.$("article")[0], {
             snap: true,
@@ -60,11 +61,38 @@ App.registerPage("detail", function () {
                 vScrollbar: false
             });
             scroll.refresh();
-            
         });
 
         App.getTemplate("invoices", function (tmpl) {
             proxy.trigger("template_invoices", tmpl);
+        });
+
+        // Render contact info
+        proxy.assign("data", "template_contact", function (data, template) {
+            template = App.localize(template, {"title": "Contact"});
+            var html = _.template(template, data.customerKPI);
+            contactDialog = new AppUI.Dialog({className: "contact", modal: true}, {}, function () {
+                
+            }, html);
+        });
+
+        App.getTemplate("contact_info", function (tmpl) {
+            proxy.trigger("template_contact", tmpl);
+        });
+
+        detailView.bind("showContact", function (event) {
+            if (contactDialog) {
+                contactDialog.open();
+            }
+        });
+
+        detailView.bind("goNote", function (event) {
+            page.openView("note");
+        });
+
+        detailView.delegateEvents({
+            "click .show_contact": "showContact",
+            "click .show_notes": "goNote"
         });
     };
 

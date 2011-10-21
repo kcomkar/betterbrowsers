@@ -44,9 +44,9 @@
         <!-- operation button here without localization-->
         <nav class="toolbar">
             <ul>
-                <li><a class="show_hitlist" href="">Hit List</a></li>
-                <li><a class="show_contact" href="">Contact</a></li>
-                <li><a class="show_notes" href="">Notes</a></li>
+                <li><a class="show_hitlist" href="javascript:;">Collections Hit List</a></li>
+                <li><a class="show_contact" href="javascript:;">Contact Information</a></li>
+                <li><a class="show_notes" href="javascript:;">Customer Notes</a></li>
             </ul>
         </nav>
     </footer>
