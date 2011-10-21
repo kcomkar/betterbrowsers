@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/hitlist.css" />
         <link rel="stylesheet" href="css/detail.css" />
         <link rel="stylesheet" href="css/note.css" />
+        <link rel="stylesheet" href="css/invoice.css" />
         <script type="text/javascript" src="libs3rd/LAB.src.js"></script>
         <script type="text/javascript">
             $LAB.script("libs/storage.js")
@@ -26,9 +27,10 @@
             .script("libs/common.js").wait()
             .script("scripts/hitlist.js")
             .script("scripts/detail.js")
+            .script("scripts/invoice.js")
             .script("scripts/note.js").wait(function () {
                 App.initView = function () {
-                    App.trigger("openView", "detail", 0);
+                    App.trigger("openView", "hitlist", 0);
                 };
                 App.init();
             });

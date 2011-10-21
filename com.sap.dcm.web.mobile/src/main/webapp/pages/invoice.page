@@ -1,0 +1,14 @@
+<section id="invoice" class="page">
+    <header>
+        <div class="action">
+            <a href="javascript:;">Invoices</a>
+        </div>
+        <h2 class="title">Rolf &amp; Sons Materials</h2>
+        <div class="action"></div>
+    </header>
+    <article>
+        <div class="detail">
+            
+        </div>
+    </article>
+</section>
