@@ -1,0 +1,27 @@
+<ul class="detail">
+    <li>
+        <div class="label">Revenue Last Year</div>
+        <div class="value"><%=customerKPI.revenueLastYear%> <span class="currency">EUR</span></div>
+    </li>
+    <li>
+        <div class="label">Promised Amount</div>
+        <div class="value"><%=customerKPI.promisedAmount%> <span class="currency">EUR</span></div>
+    </li>
+    <li>
+        <div class="label">Broken Promise to Pay</div>
+        <div class="value"><%=customerKPI.brokenPromiseToPay%> <span class="currency">EUR</span></div>
+    </li>
+    <li>
+        <div class="label">Disputed Amount</div>
+        <div class="value"><%=customerKPI.disputedAmount%> <span class="currency">EUR</span></div>
+    </li>
+    <li>
+        <div class="label">Manual Clearing Ratio</div>
+        <div class="value ratio">
+            <div class="ratioview">
+                <div class="gradient_bar"><div class="ratio_indicator">^</div></div>
+            </div>
+            <div class="ratio_value"><%=customerKPI.manualClearingRatio%></div>
+        </div>
+    </li>
+</ul>

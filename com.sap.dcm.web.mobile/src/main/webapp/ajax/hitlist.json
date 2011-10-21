@@ -1,13 +1,161 @@
 {
-    "dso": {
-        "data": [{"id": "001", "company": "Terra Earth Movers", "dso": "73 days"},
-            {"id": "002", "company": "Rolf & Sons Materials", "dso": "70 days"},
-            {"id": "003", "company": "Pliant Stock", "dso": "68 days"},
-            {"id": "004", "company": "National Builders", "dso": "65 days"},
-            {"id": "005", "company": "Newton-Walsh", "dso": "65 days"},
-            {"id": "006", "company": "Bakker Equipment", "dso": "62 days"}],
-        "entityType": ["company", "dso"],
-        "ui_widget": "dso"},
-    "openAmt": [],
-    "intLoss": []
+    "collectionOverviewResponse": {
+        "currentUser": "",
+        "dsoList": [
+            {
+                "customerId": "0000105511",
+                "customerName": "Serv Mgmt TPVS Customer 1",
+                "dso": 858
+            },
+            {
+                "customerId": "0992844001",
+                "customerName": "Melanie Head",
+                "dso": 411
+            },
+            {
+                "customerId": "0992140004",
+                "customerName": "Roger Bain",
+                "dso": 378
+            },
+            {
+                "customerId": "0992385003",
+                "customerName": "Chris Rendell",
+                "dso": 367
+            },
+            {
+                "customerId": "0992600001",
+                "customerName": "Patricia Calvino",
+                "dso": 335
+            },
+            {
+                "customerId": "0992141001",
+                "customerName": "Kathey Oliver",
+                "dso": 298
+            },
+            {
+                "customerId": "0000105412",
+                "customerName": "Tornado Motorsports",
+                "dso": 295
+            },
+            {
+                "customerId": "0992160002",
+                "customerName": "David Edson",
+                "dso": 282
+            },
+            {
+                "customerId": "0992263001",
+                "customerName": "Alan McBride",
+                "dso": 273
+            },
+            {
+                "customerId": "0000105438",
+                "customerName": "Schneider & Söhne",
+                "dso": 238
+            }
+        ],
+        "openAmountList": [
+            {
+                "customerId": "0945970001",
+                "customerName": "Joanne Canela",
+                "openAmount": "43828786.44"
+            },
+            {
+                "customerId": "0891734001",
+                "customerName": "Maria Morgan",
+                "openAmount": 9020110.7
+            },
+            {
+                "customerId": "0000105472",
+                "customerName": "Hever Industrial UK",
+                "openAmount": 8724168.35
+            },
+            {
+                "customerId": "0000105472",
+                "customerName": "Hever Industrial UK",
+                "openAmount": 8724168.35
+            },
+            {
+                "customerId": "0945970002",
+                "customerName": "Judith Card",
+                "openAmount": 7819286.16
+            },
+            {
+                "customerId": "0204974001",
+                "customerName": "Stella Earls",
+                "openAmount": 7591392.14
+            },
+            {
+                "customerId": "0129130001",
+                "customerName": "Johny Hampton",
+                "openAmount": 6536940.9
+            },
+            {
+                "customerId": "0275350001",
+                "customerName": "Norbert Vorlob",
+                "openAmount": 5819446.82
+            },
+            {
+                "customerId": "0946857004",
+                "customerName": "Alyson Harrison",
+                "openAmount": 4330914.71
+            },
+            {
+                "customerId": "0126761001",
+                "customerName": "Jutta Lee",
+                "openAmount": 4304481.02
+            }
+        ],
+        "interestLossList": [
+            {
+                "customerId": "0000105472",
+                "customerName": "Hever Industrial UK",
+                "interestLoss": 245895.58
+            },
+            {
+                "customerId": "0000105472",
+                "customerName": "Hever Industrial UK",
+                "interestLoss": 245895.58
+            },
+            {
+                "customerId": "0000105424",
+                "customerName": "Suffix Manufacturing Co.",
+                "interestLoss": 93855.66
+            },
+            {
+                "customerId": "0000105425",
+                "customerName": "Delaware Valley Plumbing",
+                "interestLoss": 23084.18
+            },
+            {
+                "customerId": "0000105425",
+                "customerName": "Delaware Valley Plumbing",
+                "interestLoss": 23084.18
+            },
+            {
+                "customerId": "0205397001",
+                "customerName": "Daniel Russell",
+                "interestLoss": 19195.02
+            },
+            {
+                "customerId": "0000105536",
+                "customerName": "International Transport Comp.",
+                "interestLoss": 6423.57
+            },
+            {
+                "customerId": "0000105412",
+                "customerName": "Tornado Motorsports",
+                "interestLoss": 4387.35
+            },
+            {
+                "customerId": "0000105433",
+                "customerName": "Hershay Foods - Hamburg",
+                "interestLoss": 3280.64
+            },
+            {
+                "customerId": "0000105433",
+                "customerName": "Hershay Foods - Hamburg",
+                "interestLoss": 3280.64
+            }
+        ]
+    }
 }

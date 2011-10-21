@@ -1,0 +1,15 @@
+<div class="scroll_wrapper">
+    <ul>
+        <% _.each(notes, function (note) { %>
+            <li class="record">
+                <div class="account">
+                    <div class="name"><%=note.accounter%></div>
+                    <div class="time"><time><%=note.time%></time></div>
+                </div>
+                <div class="content">
+                    <p><%=note.content%></p>
+                </div>
+            </li>
+        <% }); %>
+    </ul>
+</div>

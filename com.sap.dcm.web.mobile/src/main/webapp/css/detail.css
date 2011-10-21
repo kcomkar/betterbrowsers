@@ -1,0 +1,238 @@
+#detail header {
+    position: absolute;
+    height: 43px;
+    width: 100%;
+    top: 0;
+    z-index: 6;
+    background-color: #6d6d6e;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%,
+        color-stop(0, #6d6d6e),
+        color-stop(0.5, #3c3c3c),
+        color-stop(0.5, #3c3c3c),
+        color-stop(1, #000) );
+    color: #fdfdfd;
+    font-size: 16px;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+#detail article {
+    top: 43px;
+    bottom: 52px;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+    overflow: hidden;
+}
+#detail article .scroller {
+    height: 100%;
+    width: 400%;
+}
+#detail article ul.detail_info {
+    display: -webkit-box;
+    width: 100%;
+    height: 100%;
+}
+
+#detail article .detail_info li.card {
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+#detail .indicator {
+    position: absolute;
+    bottom: 10px;
+    z-index: 6;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+}
+
+#detail .indicator ul {
+    display: -webkit-box;
+}
+#detail .indicator li {
+    text-indent: -9999em;
+    width: 8px;
+    height: 8px;
+    -webkit-border-radius: 4px;
+    background-color: #ddd;
+    overflow: hidden;
+    margin-right: 4px;
+}
+#detail .indicator li:last-child {
+    margin-right: 0;
+}
+#detail .indicator li.active {
+    background-color: #888;
+}
+#detail footer {
+    position: absolute;
+    height: 52px;
+    bottom: 0;
+    z-index: 6;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%,
+        color-stop(0, #6d6d6e),
+        color-stop(0.5, #3c3c3c),
+        color-stop(0.5, #3c3c3c),
+        color-stop(1, #000) );
+    width: 100%;
+}
+#detail h3 {
+    background-color: #f0ab00;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    height: 24px;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+#detail .customer_info,
+#detail .financial,
+#detail .overview {
+    padding: 16px 14px 0;
+}
+#detail .company_name {
+    font-size: 18px;
+    font-weight: bold;
+}
+#detail .address1,
+#detail .state,
+#detail .address2 {
+    font-size: 15px;
+    color: #7b7b7b;
+    font-weight: bold;
+    padding: 5px 0 0 0;
+}
+#detail .customer_info .detail {
+    padding: 24px 0 0 0;
+}
+#detail .customer_info li {
+    padding: 0 0 10px 0;
+}
+#detail .financial .label,
+#detail .overview .label,
+#detail .customer_info .label,
+#detail .customer_info .value {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    white-space: nowrap;
+}
+#detail .currency,
+#detail .financial .label,
+#detail .overview .label,
+#detail .customer_info .label {
+    color: #dedede;
+}
+#detail .overview .value,
+#detail .customer_info .value {
+    color: #000;
+    padding: 0 0 0 0;
+}
+#detail .financial .value,
+#detail .overview .value {
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+#detail .overview .amount {
+    color: #f00;
+}
+#detail .ratio {
+    display: -webkit-box;
+}
+#detail .ratioview {
+    -webkit-box-flex: 1;
+}
+#detail .ratio_value {
+    color: #eea24f;
+}
+#detail .ratio_indicator {
+    padding-left: 68%;
+    text-align: left;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    top: 17px;
+    left: -4px;
+}
+#detail .gradient_bar {
+    background-image: -webkit-gradient(linear, 0 0, 100% 0,
+        color-stop(0, #006600),
+        color-stop(0.5, #e9b013),
+        color-stop(1, #ff0000) );
+    height: 17px;
+    margin: 0 10px 0 30px;
+}
+#detail .invoices {
+    padding: 0 14px;
+    position: absolute;
+    top: 24px;
+    width: 100%;
+    bottom: 0;
+    z-index: 4;
+    -webkit-box-sizing: border-box;
+}
+#detail .invoices li {
+    display: -webkit-box;
+    padding: 13px 0 0 0;
+}
+#detail .invoices .info {
+    font-size: 15px;
+    font-weight: bold;
+    -webkit-box-flex: 1;
+}
+#detail .invoices .action {
+    width: 30px;
+    display: -webkit-box;
+    text-decoration: none;
+    font-weight: bold;
+    color: #888;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+#detail .invoices .item_no {
+    color: #4684b7;
+    display: -webkit-box;
+    -webkit-box-align: end;
+}
+#detail .invoices .item {
+    display: -webkit-box;
+}
+#detail .invoices .amount {
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-align: end;
+    -webkit-box-pack: end;
+}
+#detail .invoices .currency {
+    display: -webkit-box;
+    -webkit-box-align: end;
+    -webkit-box-pack: end;
+    padding: 0 0 0 3px;
+}
+#detail .invoices .date {
+    color: #dedede;
+    text-align: right;
+}
+
+#detail .toolbar ul {
+    display: -webkit-box;
+}
+#detail .toolbar li {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-flex: 1;
+    width: 100px;
+}
+#detail .toolbar a {
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    height: 52px;
+}

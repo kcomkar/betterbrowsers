@@ -1,0 +1,37 @@
+<section id="logon" class="page">
+    <article>
+  <div class="logon_info">
+  <div class="form_view">
+    <div class = "logon_title">Collection Hit List</div>
+    <div class="logon_controls">
+    <ul class="listview">
+        <li>
+            <label for="username"><i></i>{{username}}</label>
+        </li>
+        <li>
+            <input type="text" name="username" id="username" value="" placeholder=""/>
+        </li>
+        <li>
+            <label for="password"><i></i>{{password}}</label>
+        </li>
+        <li>
+            <input type="password" name="password" id="password" value="" placeholder=""/>
+        </li>
+    </ul>
+	<!-- Login Button -->
+    <div class="logon_button">
+        <input id="logon_button" name="{{logon}}" value="logon" type="button" />
+    </div>
+    <div class="errormessage" id="errormessage"></div>
+    </div>
+  </div>
+    <div class="footer">
+    <div class="footer_content">
+    <div class="logon_productname">SAP Dynamic Cash Management</div>
+    <div class="logon_productcompany">POWERED BY SAP HAHA</div>
+    <div class="logon_img"></div>
+    </div>
+    <div>
+</div>
+    </article>
+</section>

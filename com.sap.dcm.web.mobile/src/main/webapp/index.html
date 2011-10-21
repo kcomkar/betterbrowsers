@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8"></meta>
+        <meta charset="UTF-8" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
         <meta name="format-detection" content="telephone=no" />
@@ -26,12 +26,19 @@
             .script("scripts/hitlist.js")
             .script("scripts/detail.js")
             .script("scripts/note.js").wait(function () {
+                App.initView = function () {
+                    App.trigger("openView", "detail", 0);
+                };
                 App.init();
             });
         </script>
     </head>
-    <body id="container">
-        <div class="alpha"></div>
-        <div class="beta"></div>
+    <body>
+        <div id="container">
+        <!-- Document here! -->
+            <div class="alpha"></div>
+            <div class="beta"></div>
+            <div class="gamma"></div>
+        </div>
     </body>
 </html>
