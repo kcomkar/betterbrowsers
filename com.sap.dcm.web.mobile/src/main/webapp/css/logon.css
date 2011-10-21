@@ -69,6 +69,13 @@
 	text-align: center;
 }
 
+#logon .errormessage
+{
+	padding-top:10px;
+	color:red;
+	text-align:center;
+	font-weight:700;
+}
 #logon #logon_button{
 	width:100px;
 	height:30px;

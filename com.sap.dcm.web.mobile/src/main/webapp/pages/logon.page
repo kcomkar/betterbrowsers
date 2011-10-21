@@ -22,6 +22,7 @@
     <div class="logon_button">
         <input id="logon_button" name="{{logon}}" value="logon" type="button" />
     </div>
+    <div class="errormessage" id="errormessage"></div>
     </div>
   </div>
     <div class="footer">
