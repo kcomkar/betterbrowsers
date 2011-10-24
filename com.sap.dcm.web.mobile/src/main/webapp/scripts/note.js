@@ -4,13 +4,12 @@ App.registerPage("note", function () {
         var noteView = new App.View(page.node);
         var proxy = new EventProxy();
         
-        
-        console.log(noteView.$("article"));
-        
+        var originalData;
         //fetch the notes' data
         noteView.fetchData = function (url) {
             $.getJSON("ajax/"+ url +".json", function (data) {
-               proxy.trigger("data", data);
+               originalData = data.noteListResponse;
+               proxy.trigger("data", originalData);
             });
         };
         noteView.fetchData("notes");
@@ -20,24 +19,46 @@ App.registerPage("note", function () {
             proxy.trigger("template", template);
         });
         
-        proxy.assign("template", "data", function (template, data) {
-           var html = _.template(template, {notes: data.results});
-           noteView.$(".notes_set").html(html);
-           var iscroll = new iScroll(noteView.$(".notes_set")[0], {
-               useTransform : false,
-               onBeforeScrollStart : function (e) {
-                   var target = e.target;
-                   while (target.nodeType !== 1) {
-                       target = target.parentNode;
-                   }
-                   if (target.tagName !== 'SELECT' && target.tagName !== 'INPUT'
-                           && target.tagName !== 'TEXTAREA') {
-                       e.preventDefault();
-                   }
-               },
-               scrollbarClass : 'myScrollbar'
-           });
+        noteView.render = function(template, data) {
+        	var html = _.template(template, {notes: data["notes"] || []});
+            noteView.$(".notes_set").html(html);
+            var iscroll = new iScroll(noteView.$(".notes_set")[0], {
+                useTransform : false,
+                onBeforeScrollStart : function (e) {
+                    var target = e.target;
+                    while (target.nodeType !== 1) {
+                        target = target.parentNode;
+                    }
+                    if (target.tagName !== 'SELECT' && target.tagName !== 'INPUT'
+                            && target.tagName !== 'TEXTAREA') {
+                        e.preventDefault();
+                    }
+                },
+                scrollbarClass : 'myScrollbar'
+            });
+        };
+        
+        proxy.assignAll("template", "data", function (template, data) {
+           noteView.render(template, data);
         });
+        
+        noteView.bind("add", function () {
+            /*
+             * POST HEADER: content-type: application/x-www-form-urlencoded
+             * BODY: contact=wangchenchang&text=aaaaaaaa
+             * 
+             * */
+        });
+        
+        noteView.bind("done", function () {
+            page.closeViewport();
+        });
+        
+        noteView.delegateEvents({
+            "click .add": "add",
+            "click .done": "done"
+        });
+        
         
         
     };

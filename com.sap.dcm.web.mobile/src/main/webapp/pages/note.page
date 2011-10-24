@@ -1,7 +1,7 @@
 <section id="note" class="page">
     <header>
         <div class="header">
-	        <a class="done">Done</a>
+	        <a class="done" disabled>Done</a>
 	        <div class="title">Notes</div>
 	        <a class="add">Add</a>
 	    </div>
