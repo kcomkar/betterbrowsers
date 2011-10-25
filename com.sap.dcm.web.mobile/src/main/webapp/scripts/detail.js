@@ -87,7 +87,7 @@ App.registerPage("detail", function () {
         });
 
         detailView.bind("goNote", function (event) {
-            page.openView("note");
+            page.openViewport("note");
         });
 
         detailView.bind("viewDetail", function (event) {
