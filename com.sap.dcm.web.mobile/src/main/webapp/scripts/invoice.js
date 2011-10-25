@@ -1,5 +1,5 @@
 App.registerPage("invoice", function () {
-    var initialize = function () {
+    var initialize = function (customerId, invoceId) {
         var page = this;
         var scroll;
         var view = new App.View(page.node);
@@ -15,17 +15,30 @@ App.registerPage("invoice", function () {
             });
         });
 
+        proxy.assign("nodata", "template", function (data, template) {
+            // TODO
+        });
+
         App.getTemplate("invoice_detail", function (tmpl) {
             proxy.trigger("template", tmpl);
         });
 
-        // TODO
-        // $.getJSON("invoice_detail", function (data) {
-            // proxy.trigger("data", data);
-        // });
-        
-        proxy.trigger("data", {});
-        
+        $.ajax({
+            type: "GET",
+            url: "rest/mobile/collectionOverview/getCustomer/"+ customerId +"/invoices/" + invoceId,
+            dataType: 'json',
+            success: function (data) {
+                if (data) {
+                    proxy.trigger("data", data);
+                } else {
+                    proxy.trigger("nodata");
+                }
+            },
+            error: function(xhr, type) {
+                // TODO error handling.
+            }
+        });
+
         view.bind("closeViewport", function (event) {
             page.closeViewport();
         });
