@@ -16,9 +16,19 @@ App.registerPage("detail", function () {
             }
         });
 
-        $.getJSON("ajax/detail.json", function (data) {
-            data.collectionDetailResponse.invoiceHeaders = data.collectionDetailResponse.invoiceHeaders || [];
-            proxy.trigger("data", data.collectionDetailResponse);
+        // $.getJSON("ajax/detail.json", function (data) {
+            // data.collectionDetailResponse.invoiceHeaders = data.collectionDetailResponse.invoiceHeaders || [];
+            // proxy.trigger("data", data.collectionDetailResponse);
+        // });
+
+        $.ajax({
+            type: "GET",
+            url: "rest/mobile/collectionOverview/getCustomer/" + customerId,
+            dataType: 'json',
+            success: function (data) {
+                data.collectionDetailResponse.invoiceHeaders = data.collectionDetailResponse.invoiceHeaders || [];
+                proxy.trigger("data", data.collectionDetailResponse);
+            }
         });
 
         // Render customer information
@@ -94,7 +104,12 @@ App.registerPage("detail", function () {
             page.openViewport("invoice");
         });
 
+        detailView.bind("showHitlist", function (event) {
+            page.openView("hitlist");
+        });
+
         detailView.delegateEvents({
+            "click .show_hitlist": "showHitlist",
             "click .show_contact": "showContact",
             "click .show_notes": "goNote",
             "click .invoices .action": "viewDetail"
