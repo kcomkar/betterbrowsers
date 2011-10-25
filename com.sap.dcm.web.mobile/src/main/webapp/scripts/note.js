@@ -7,10 +7,20 @@ App.registerPage("note", function () {
         var originalData;
         //fetch the notes' data
         noteView.fetchData = function (url) {
-            $.getJSON("ajax/"+ url +".json", function (data) {
+           /* $.getJSON("ajax/"+ url +".json", function (data) {
                originalData = data.noteListResponse;
                proxy.trigger("data", originalData);
-            });
+            }); */
+     	
+     	 $.ajax({
+           	type:'GET',
+           	url:'rest/mobile/collectionOverview/getCustomer/0000105511/notes',
+           	dataType:'json',
+           	success:function (data) {
+           		originalData = data.noteListResponse;
+           		 proxy.trigger("data", originalData);
+           	}
+               });
         };
         noteView.fetchData("notes");
         

@@ -6,10 +6,19 @@ App.registerPage("hitlist", function () {
         
         //fetch data from the given url
         listView.fetchData = function (url) {
-            $.getJSON("ajax/"+ url +".json", function (data) {
+          /*$.getJSON("ajax/"+ url +".json", function (data) {
                 proxy.trigger("data", data.collectionOverviewResponse);
-            });
-        };
+            });*/
+        	 $.ajax({
+             	type:'GET',
+             	url:'rest/mobile/collectionOverview/getOverview',
+             	dataType:'json',
+             	success:function (data) {
+                    proxy.trigger("data", data.collectionOverviewResponse);
+             	}
+                 });
+            };
+        
         listView.fetchData("hitlist");
         //fetch hitlist.tmpl here
         App.getTemplate("hitlist", function (template) {
