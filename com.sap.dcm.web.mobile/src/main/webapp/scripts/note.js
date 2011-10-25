@@ -5,6 +5,29 @@ App.registerPage("note", function () {
         var proxy = new EventProxy();
         
         var originalData;
+        
+        noteView.render = function(template, data) {
+        	var html = _.template(template, {notes: data["notes"] || []});
+            noteView.$(".notes_set").html(html);
+            var iscroll = new iScroll(noteView.$(".notes_set")[0], {
+                useTransform : false,
+                onBeforeScrollStart : function (e) {
+                    var target = e.target;
+                    while (target.nodeType !== 1) {
+                        target = target.parentNode;
+                    }
+                    if (target.tagName !== 'SELECT' && target.tagName !== 'INPUT'
+                            && target.tagName !== 'TEXTAREA') {
+                        e.preventDefault();
+                    }
+                },
+                scrollbarClass : 'myScrollbar'
+            });
+        };
+
+        proxy.assignAll("template", "data", function (template, data) {
+            noteView.render(template, data);
+         });
         //fetch the notes' data
         noteView.fetchData = function (url) {
            /* $.getJSON("ajax/"+ url +".json", function (data) {
@@ -28,36 +51,40 @@ App.registerPage("note", function () {
         App.getTemplate("note", function (template) {
             proxy.trigger("template", template);
         });
-        
-        noteView.render = function(template, data) {
-        	var html = _.template(template, {notes: data["notes"] || []});
-            noteView.$(".notes_set").html(html);
-            var iscroll = new iScroll(noteView.$(".notes_set")[0], {
-                useTransform : false,
-                onBeforeScrollStart : function (e) {
-                    var target = e.target;
-                    while (target.nodeType !== 1) {
-                        target = target.parentNode;
-                    }
-                    if (target.tagName !== 'SELECT' && target.tagName !== 'INPUT'
-                            && target.tagName !== 'TEXTAREA') {
-                        e.preventDefault();
-                    }
-                },
-                scrollbarClass : 'myScrollbar'
-            });
-        };
-        
-        proxy.assignAll("template", "data", function (template, data) {
-           noteView.render(template, data);
-        });
-        
-        noteView.bind("add", function () {
+
+        var actionButton = noteView.$(".action");
+        var noteSet = noteView.$(".notes_set");
+        var noteAdd = noteView.$(".notes_add");
+        noteView.bind("action", function () {
             /*
              * POST HEADER: content-type: application/x-www-form-urlencoded
              * BODY: contact=wangchenchang&text=aaaaaaaa
              * 
              * */
+        	if (actionButton.hasClass("add")) {
+        		// TODO
+        		noteAdd.removeClass("hidden");
+        		noteSet.addClass("hidden");
+        		actionButton.removeClass("add").addClass("submit");
+        	} else if (actionButton.hasClass("submit")) {
+        		// TODO
+        		$.ajax({
+                	type:'POST',
+                	url:'rest/mobile/collectionOverview/getCustomer/0000105511/notes',
+                	data:{"contact":"wangchenchang","text":noteView.$("textarea").val() },
+                	dataType:'json',
+                	success:function (data) {
+                		noteView.fetchData("notes");
+                		noteAdd.addClass("hidden");
+                		noteSet.removeClass("hidden");
+                		actionButton.removeClass("submit").addClass("add");
+                	},
+                	error:function(data)
+                	{
+                		//todo;
+                	}
+                    });
+        	}
         });
         
         noteView.bind("done", function () {
@@ -65,7 +92,7 @@ App.registerPage("note", function () {
         });
         
         noteView.delegateEvents({
-            "click .add": "add",
+            "click .action": "action",
             "click .done": "done"
         });
         
