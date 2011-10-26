@@ -1,0 +1,258 @@
+{
+    "preferencesResponse": {
+        "preferences": {
+            "currency": "USD",
+            "companyCodes": [
+                "US01",
+                "US02"
+            ]
+        },
+        "currencySearchHelp": [
+            "USD",
+            "EUR",
+            "DEM",
+            "JPY",
+            "CAD",
+            "AUD",
+            "NZD",
+            "CHF",
+            "IEP",
+            "GBP",
+            "ATS",
+            "FRF",
+            "ARS",
+            "BRL",
+            "PEN"
+        ],
+        "companyCodeSearchHelp": [
+            {
+                "companyCode": "US01",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "US02",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            },
+            {
+                "companyCode": "CHF06",
+                "companyName": "021"
+            }
+        ]
+    }
+}

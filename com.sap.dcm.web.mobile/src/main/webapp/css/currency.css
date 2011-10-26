@@ -1,0 +1,64 @@
+#currency header {
+    display: -webkit-box;
+    height: 44px;
+    -webkit-box-align: center;
+    padding: 0 10px;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0, #888),
+            color-stop(0.45, #666),
+            color-stop(0.47, #444),
+            color-stop(1, #000000));
+}
+
+#currency header .back{
+    padding: 7px;
+    border: 1px solid gray;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 1px -1px 1px #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0, #888),
+            color-stop(0.45, #666),
+            color-stop(0.47, #444),
+            color-stop(1, #000000));
+    box-shadow: 0px 1px 0px #888;
+}
+
+#currency header .title {
+    -webkit-box-flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+#currency .scroll_wrapper {
+    position: absolute;
+    top: 44px;
+    background: #AAA;
+    width: 100%;
+    bottom: 0;
+    width: 100%;
+}
+
+#currency .scroll_wrapper div:first-child {
+    width: 100%;
+}
+
+#currency .scroll_wrapper .item {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    padding: 0 10px;
+    height: 25px;
+    border-bottom: 1px solid #030303;
+    -webkit-box-pack: center;
+}
+
+#currency .scroll_wrapper .item.select {
+    background-image: url("../images/loading.png");
+    background-position: 20px;
+    background-repeat: no-repeat;
+}

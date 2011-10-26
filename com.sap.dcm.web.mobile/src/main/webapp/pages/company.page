@@ -1,0 +1,13 @@
+<section id="company" class="page">
+    <header>
+        <a class="back">Settings</a>
+        <div class="title">Company Code</div>
+    </header>
+    <article>
+        <div class="content">
+            <h3>Choose Reporting Company Codes</h3>
+            <h4>Select one or more company codes</h4>
+            <div class="scroll_wrapper"></div>
+        </div>
+    </article>
+</section>

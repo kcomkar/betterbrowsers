@@ -1,0 +1,119 @@
+#preference {
+    background-color: #eee;
+}
+#preference .header {
+    display: -webkit-box;
+    height: 44px;
+    -webkit-box-align: center;
+    padding: 0 10px;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0, #888),
+            color-stop(0.45, #666),
+            color-stop(0.47, #444),
+            color-stop(1, #000000));
+}
+
+#preference .done {
+    padding: 7px;
+    border: 1px solid gray;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 1px -1px 1px #fff;
+    background-image: -webkit-gradient(linear, left top, left bottom,
+            color-stop(0, #888),
+            color-stop(0.45, #666),
+            color-stop(0.47, #444),
+            color-stop(1, #000000));
+    box-shadow: 0px 1px 0px #888;
+}
+
+#preference .header .done:hover{
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #888), color-stop(0.5, #999), color-stop(1, #aaa));
+    text-decoration: none;
+}
+
+
+#preference .header .title {
+    -webkit-box-flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+#preference .setting {
+    padding: 10px;
+}
+
+#preference .setting ul {
+    border: 1px solid #aaa;
+    border-radius: 7px;
+    background-color: #fff;
+}
+
+#preference .setting .sub_title {
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+}
+
+#preference .setting .system {
+    
+    
+}
+
+#preference .setting ul li {
+    height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 15px;
+    border-top: 1px solid #aaa;
+    display: -webkit-box;
+    -webkit-box-align: center
+}
+
+#preference .setting ul li:first-child {
+    border: none;
+}
+
+#preference .reporting {
+    padding-top: 15px;
+}
+
+#preference .record .field {
+    
+}
+
+#preference .record .value {
+    color: lightblue;
+    text-align: right;
+    -webkit-box-flex: 1;
+}
+
+#preference .record .drill_down {
+    width: 30px;
+    padding-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

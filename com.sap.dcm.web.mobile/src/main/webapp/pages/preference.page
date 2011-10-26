@@ -1,0 +1,13 @@
+<section id="preference" class="page">
+    <header class="header">
+        <a class="done" placeholder="done">Done</a>
+        <h2 class="title">Settings</h2>
+    </header>
+    <article>
+        <div class="setting">
+            <div class="column_loading">
+                <div class="loading_animation">Loading...</div>
+            </div>
+    </div>
+    </article>
+</section>

@@ -1,0 +1,22 @@
+<div class="system">
+    <div class="sub_title">System</div>
+    <ul>
+        <li class="logout">Log Out (<%=App.username%>)</li>
+    </ul>
+</div>
+<div class="reporting">
+    <div class="sub_title">Reporting</div>
+    <ul>
+        <li class="record currency" data-type="currency">
+            <div class="field">Currency</div>
+            <div class="value"><%=preferences.currency%></div>
+            <div class="drill_down"> > </div>
+        </li>
+        <li class="record companyCodes" data-type="company">
+            <div class="field">Company Code</div>
+            <div class="value"><%=preferences.companyCodes.join(",")%></div>
+            <div class="drill_down"> > </div>
+        </li>
+        
+    </ul>
+</div>

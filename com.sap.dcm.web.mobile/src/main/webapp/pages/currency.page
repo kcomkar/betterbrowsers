@@ -1,0 +1,12 @@
+<section id="currency" class="page">
+    <header>
+        <a class="back">Settings</a>
+        <div class="title">Currency</div>
+    </header>
+    <article>
+        <div class="content">
+            <h3>Choose a Reporting Currency</h3>
+            <div class="scroll_wrapper"></div>
+        </div>
+    </article>
+</section>

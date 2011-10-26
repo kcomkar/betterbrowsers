@@ -1,0 +1,16 @@
+<div>
+    <ul>
+        <% _.each(options.data, function (item) { %>
+            <% if (_.include(options.selectItem, item.code)) { %>
+                <li class="item select" data-code="<%=item.code%>">
+                    <%=item.value%>
+                </li>
+            <% } else { %>
+                 <li class="item" data-code="<%=item.code%>">
+                    <%=item.value%>
+                </li>
+            <% } %>
+        <% }); %>
+    </ul>
+
+</div>
