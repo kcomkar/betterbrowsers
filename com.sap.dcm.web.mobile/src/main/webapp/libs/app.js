@@ -568,7 +568,8 @@
     /**
      * @description Local code(after re-mapping).
      */
-    App.langCode = _remappingLangCode(navigator.language);
+    //App.langCode = _remappingLangCode(navigator.language);
+    App.langCode = "en-us";
 
     /**
      * @description All localization resources will be stored at here by locale code.
