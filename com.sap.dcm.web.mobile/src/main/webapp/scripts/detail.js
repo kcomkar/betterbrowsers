@@ -97,11 +97,13 @@ App.registerPage("detail", function () {
         });
 
         detailView.bind("goNote", function (event) {
-            page.openViewport("note");
+            page.openViewport("note/" + customerId);
         });
 
         detailView.bind("viewDetail", function (event) {
-            page.openViewport("invoice");
+            var target = $(event.currentTarget);
+            var invoceId = target.data("itemid");
+            page.openViewport("invoice/" + customerId + "/" + invoceId);
         });
 
         detailView.bind("showHitlist", function (event) {
