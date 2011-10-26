@@ -1,5 +1,5 @@
 App.registerPage("detail", function () {
-    var initialize = function (customerId) {
+    var initialize = function (companyCode, customerId) {
         var page = this;
         var detailView = new App.View(page.node);
         var indicator = detailView.$(".indicator");
@@ -23,7 +23,7 @@ App.registerPage("detail", function () {
 
         $.ajax({
             type: "GET",
-            url: "rest/mobile/collectionOverview/getCustomer/" + customerId,
+            url: "rest/mobile/collectionOverview/getCustomer/" + companyCode + "/" + customerId,
             dataType: 'json',
             success: function (data) {
                 data.collectionDetailResponse.invoiceHeaders = data.collectionDetailResponse.invoiceHeaders || [];
@@ -82,7 +82,6 @@ App.registerPage("detail", function () {
             template = App.localize(template, {"title": "Contact"});
             var html = _.template(template, data.customerKPI);
             contactDialog = new AppUI.Dialog({className: "contact", modal: true}, {}, function () {
-                
             }, html);
         });
 
@@ -97,13 +96,13 @@ App.registerPage("detail", function () {
         });
 
         detailView.bind("goNote", function (event) {
-            page.openViewport("note/" + customerId);
+            page.openViewport("note/" + companyCode + "/" + customerId);
         });
 
         detailView.bind("viewDetail", function (event) {
             var target = $(event.currentTarget);
             var invoceId = target.data("itemid");
-            page.openViewport("invoice/" + customerId + "/" + invoceId);
+            page.openViewport("invoice/" + companyCode + "/" + customerId + "/" + invoceId);
         });
 
         detailView.bind("showHitlist", function (event) {

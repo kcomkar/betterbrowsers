@@ -1,5 +1,5 @@
 App.registerPage("invoice", function () {
-    var initialize = function (customerId, invoceId) {
+    var initialize = function (companyCode, customerId, invoceId) {
         var page = this;
         var scroll;
         var view = new App.View(page.node);
@@ -9,7 +9,7 @@ App.registerPage("invoice", function () {
             var html = _.template(template, data);
             view.$(".detail").html(html);
             scroll = new iScroll(view.$("article")[0], {
-            onScrollEnd: function () {
+                onScrollEnd: function () {
                 
                 }
             });
@@ -25,7 +25,7 @@ App.registerPage("invoice", function () {
 
         $.ajax({
             type: "GET",
-            url: "rest/mobile/collectionOverview/getCustomer/"+ customerId +"/invoices/" + invoceId,
+            url: "rest/mobile/collectionOverview/getCustomer/" + companyCode + "/" + customerId +"/invoices/" + invoceId,
             dataType: 'json',
             success: function (data) {
                 if (data) {
