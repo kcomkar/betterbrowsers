@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/hitlist.css" />
         <link rel="stylesheet" href="css/detail.css" />
         <link rel="stylesheet" href="css/note.css" />
+        <link rel="stylesheet" href="css/invoice.css" />
         <link rel="stylesheet" href="css/preference.css" />
         <link rel="stylesheet" href="css/currency.css" />
         <link rel="stylesheet" href="css/company.css" />
@@ -25,12 +26,14 @@
             .script("libs3rd/backbone-0.5.3.js").wait()
             .script("libs/app.js").wait()
             .script("libs/appui.tabview.js")
+            .script("libs/appui.dialog.js")
             .script("libs/common.js").wait()
             .script("scripts/hitlist.js")
             .script("scripts/currency.js")
             .script("scripts/preference.js")
             .script("scripts/company.js")
             .script("scripts/detail.js")
+            .script("scripts/invoice.js")
             .script("scripts/note.js").wait(function () {
                 App.initView = function () {
                     App.trigger("openView", "hitlist", 0);

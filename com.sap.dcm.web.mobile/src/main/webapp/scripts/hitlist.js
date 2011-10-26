@@ -18,7 +18,6 @@ App.registerPage("hitlist", function () {
                     proxy.trigger("error", msg);
                 }
             });
-
         };
         listView.fetchData();
         //fetch hitlist.tmpl here
