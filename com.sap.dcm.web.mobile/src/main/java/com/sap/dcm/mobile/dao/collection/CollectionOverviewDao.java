@@ -476,8 +476,8 @@ public class CollectionOverviewDao {
 			collectionOverviewDSO.setDso(rs.getBigDecimal("DSO"));
 			
 			collectionOverviewDSO.setCompanyCode(rs.getString("COMPANY"));
-			//collectionOverviewDSO.setCompanyName(rs.getString("COMPANY_NAME"));
-			collectionOverviewDSO.setCompanyName("GUJING Dummy");
+			collectionOverviewDSO.setCompanyName(rs.getString("COMPANY_NAME"));
+			//collectionOverviewDSO.setCompanyName("GUJING Dummy");
 			
 			result.add(collectionOverviewDSO);
 		}
@@ -494,8 +494,8 @@ public class CollectionOverviewDao {
 			collectionOverviewOpenAmount.setOpenAmount(rs.getBigDecimal("TOTAL_AMOUNT_REP"));
 			
 			collectionOverviewOpenAmount.setCompanyCode(rs.getString("COMPANY"));
-			//collectionOverviewOpenAmount.setCompanyName(rs.getString("COMPANY_NAME"));
-			collectionOverviewOpenAmount.setCompanyName("GUJING Dummy");
+			collectionOverviewOpenAmount.setCompanyName(rs.getString("COMPANY_NAME"));
+			//collectionOverviewOpenAmount.setCompanyName("GUJING Dummy");
 			
 			result.add(collectionOverviewOpenAmount);
 		}
@@ -512,8 +512,8 @@ public class CollectionOverviewDao {
 			CollectionOverviewInterestLoss.setInterestLoss(rs.getBigDecimal("INTEREST_LOSS_REP"));
 			
 			CollectionOverviewInterestLoss.setCompanyCode(rs.getString("COMPANY"));
-			//CollectionOverviewInterestLoss.setCompanyName(rs.getString("COMPANY_NAME"));
-			CollectionOverviewInterestLoss.setCompanyName("GUJING Dummy");
+			CollectionOverviewInterestLoss.setCompanyName(rs.getString("COMPANY_NAME"));
+			//CollectionOverviewInterestLoss.setCompanyName("GUJING Dummy");
 			
 			result.add(CollectionOverviewInterestLoss);
 		}
