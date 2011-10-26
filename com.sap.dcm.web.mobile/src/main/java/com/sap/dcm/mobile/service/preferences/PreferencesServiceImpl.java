@@ -8,6 +8,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+import com.sap.dcm.mobile.dao.settings.CompanyCodeKV;
 import com.sap.dcm.mobile.dao.settings.Preferences;
 import com.sap.dcm.mobile.dao.settings.PreferencesDao;
 import com.sap.dcm.mobile.dao.settings.PreferencesResponse;
@@ -19,12 +20,18 @@ public class PreferencesServiceImpl implements IPreferencesService,ApplicationCo
 	public Response getPreferences() {
 		try{
 			PreferencesDao dao = (PreferencesDao)this.getContext().getBean("preferencesDao");
-			Preferences preferences = dao.getPreferences();
-			
+			List<CompanyCodeKV> companyCodeSearchHelp = dao.getCompanyCodeSearchHelp();
 			List<String> currencySearchHelp = dao.getCurrencySearchHelp();
+			String currency = dao.getReportingCurrency();
+			List<String> companyCodes = dao.getCompanyRange();
+			
+			Preferences preferences = new Preferences();
+			preferences.setCompanyCodes(companyCodes);
+			preferences.setCurrency(currency);
 			
 			PreferencesResponse response = new PreferencesResponse();
 			response.setCurrencySearchHelp(currencySearchHelp);
+			response.setCompanyCodeSearchHelp(companyCodeSearchHelp);
 			response.setPreferences(preferences);
 			
 			return Response.ok().entity(response).build();
@@ -47,10 +54,14 @@ public class PreferencesServiceImpl implements IPreferencesService,ApplicationCo
 	}
 
 
-	public Response updatePreferences(String currency, String companyCode) {
+	public Response updatePreferences(String currency, List<String> companyCodes) {
 		try{
+			
+			for(String s:companyCodes){
+				System.out.println(s);
+			}
 			PreferencesDao dao = (PreferencesDao)this.getContext().getBean("preferencesDao");
-			dao.updatePreferences(currency, companyCode);
+			dao.updatePreferences(currency, companyCodes);
 			
 			return Response.ok().build();
 			

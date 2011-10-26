@@ -77,7 +77,7 @@ public class CollectionOverviewDao {
 		
 	}
 	
-	public CustomerKPI getCustomerKPI(String customerId) throws AuthenticationException, HDBWrappedException{
+	public CustomerKPI getCustomerKPI(String companyCode, String customerId) throws AuthenticationException, HDBWrappedException{
 		CustomerKPI result = null;
 		Connection connection = UserUtils.getDBConnection();
 		/*try{
@@ -91,9 +91,15 @@ public class CollectionOverviewDao {
 		try{
 			
 			// set parameter
+			
 			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
 			cs.executeUpdate();
+			
+			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
+			cs.setString(1, companyCode);
+			cs.executeUpdate();
+			
 			
 			// get kpi
 			cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_CUSTOMER_KPIS/proc\"(?)}");
@@ -117,7 +123,7 @@ public class CollectionOverviewDao {
 		}
 	}
 	
-	public List<InvoiceHeader> getInvoices(String customerId) throws AuthenticationException, HDBWrappedException{
+	public List<InvoiceHeader> getInvoices(String companyCode, String customerId) throws AuthenticationException, HDBWrappedException{
 		List<InvoiceHeader> result = new ArrayList<InvoiceHeader>();
 		Connection connection = UserUtils.getDBConnection();
 		/*try{
@@ -134,6 +140,11 @@ public class CollectionOverviewDao {
 			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
 			cs.executeUpdate();
+			
+			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
+			cs.setString(1, companyCode);
+			cs.executeUpdate();
+			
 			
 			cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_INVOICE_LIST/proc\"(?)}");
 			cs.execute();
@@ -155,7 +166,7 @@ public class CollectionOverviewDao {
 		}
 	}
 	
-	public List<Note> getNotes(String customerId) throws AuthenticationException, HDBWrappedException{
+	public List<Note> getNotes(String companyCode, String customerId) throws AuthenticationException, HDBWrappedException{
 		List<Note> result = new ArrayList<Note>();
 		Connection connection = UserUtils.getDBConnection();
 		
@@ -164,6 +175,10 @@ public class CollectionOverviewDao {
 			// set parameter
 			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
+			cs.executeUpdate();
+			
+			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
+			cs.setString(1, companyCode);
 			cs.executeUpdate();
 			
 	
@@ -187,7 +202,7 @@ public class CollectionOverviewDao {
 		}
 	}
 	
-	public Note createNote(String customerId, String contact, String text) throws HDBWrappedException, AuthenticationException{
+	public Note createNote(String companyCode,String customerId, String contact, String text) throws HDBWrappedException, AuthenticationException{
 		Connection connection = UserUtils.getDBConnection();
 		
 		try{
@@ -195,6 +210,10 @@ public class CollectionOverviewDao {
 			// set parameter
 			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
+			cs.executeUpdate();
+			
+			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
+			cs.setString(1, companyCode);
 			cs.executeUpdate();
 			
 	
@@ -221,7 +240,7 @@ public class CollectionOverviewDao {
 	}
 	
 	
-	public InvoiceDetail getInvoice(String customerId, String invoiceId) throws AuthenticationException, HDBWrappedException{
+	public InvoiceDetail getInvoice(String companyCode,String customerId, String invoiceId) throws AuthenticationException, HDBWrappedException{
 		Connection connection = UserUtils.getDBConnection();
 		
 		try{
@@ -229,7 +248,11 @@ public class CollectionOverviewDao {
 			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
 			cs.executeUpdate();
-						
+		    
+			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
+			cs.setString(1, companyCode);
+			cs.executeUpdate();
+			
 			// set parameter
 			cs = connection.prepareCall("{CALL COLM.UPDATE_DOCUMENT(?)}");
 			cs.setString(1, invoiceId);
@@ -295,6 +318,23 @@ public class CollectionOverviewDao {
 				result.setDeliveredOn(df.format(deliveredOn));
 			}
 			
+			Date dueDate = rs.getDate("DUE_DATE");
+			if(dueDate == null){
+				result.setDueDate("");
+			}
+			else{
+				DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+				result.setDueDate(df.format(dueDate));
+			}
+			
+			Date expectedDate = rs.getDate("EXPECTED_DUE_DATE");
+			if(expectedDate == null){
+				result.setExpectedDueDate("");
+			}
+			else{
+				DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+				result.setExpectedDueDate(df.format(expectedDate));
+			}
 			
 			return result;
 		}
@@ -435,6 +475,10 @@ public class CollectionOverviewDao {
 			collectionOverviewDSO.setCustomerName(rs.getString("CUSTOMER_NAME"));
 			collectionOverviewDSO.setDso(rs.getBigDecimal("DSO"));
 			
+			collectionOverviewDSO.setCompanyCode(rs.getString("COMPANY"));
+			collectionOverviewDSO.setCompanyName(rs.getString("COMPANY_NAME"));
+			//collectionOverviewDSO.setCompanyName("GUJING Dummy");
+			
 			result.add(collectionOverviewDSO);
 		}
 		
@@ -449,6 +493,10 @@ public class CollectionOverviewDao {
 			collectionOverviewOpenAmount.setCustomerName(rs.getString("CUSTOMER_NAME"));
 			collectionOverviewOpenAmount.setOpenAmount(rs.getBigDecimal("TOTAL_AMOUNT_REP"));
 			
+			collectionOverviewOpenAmount.setCompanyCode(rs.getString("COMPANY"));
+			collectionOverviewOpenAmount.setCompanyName(rs.getString("COMPANY_NAME"));
+			//collectionOverviewOpenAmount.setCompanyName("GUJING Dummy");
+			
 			result.add(collectionOverviewOpenAmount);
 		}
 		
@@ -462,6 +510,10 @@ public class CollectionOverviewDao {
 			CollectionOverviewInterestLoss.setCustomerId(rs.getString("CUSTOMER"));
 			CollectionOverviewInterestLoss.setCustomerName(rs.getString("CUSTOMER_NAME"));
 			CollectionOverviewInterestLoss.setInterestLoss(rs.getBigDecimal("INTEREST_LOSS_REP"));
+			
+			CollectionOverviewInterestLoss.setCompanyCode(rs.getString("COMPANY"));
+			CollectionOverviewInterestLoss.setCompanyName(rs.getString("COMPANY_NAME"));
+			//CollectionOverviewInterestLoss.setCompanyName("GUJING Dummy");
 			
 			result.add(CollectionOverviewInterestLoss);
 		}

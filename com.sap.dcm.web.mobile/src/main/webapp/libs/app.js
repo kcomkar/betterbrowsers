@@ -486,6 +486,7 @@
         this.initialized = false;
         this.viewport.remove();
         delete this.viewport;
+        this.parameters = null;
     };
 
     /**

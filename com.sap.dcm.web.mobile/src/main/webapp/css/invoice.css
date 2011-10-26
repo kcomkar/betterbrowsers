@@ -1,0 +1,100 @@
+#invoice header {
+    padding: 0 5px;
+    position: absolute;
+    height: 43px;
+    width: 100%;
+    top: 0;
+    z-index: 6;
+    background-color: #6d6d6e;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%,
+        color-stop(0, #6d6d6e),
+        color-stop(0.5, #3c3c3c),
+        color-stop(0.5, #3c3c3c),
+        color-stop(1, #000) );
+    color: #fdfdfd;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+#invoice header .action {
+    width: 70px;
+}
+#invoice header .action a {
+    width: 70px;
+    height: 30px;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    border: 1px solid #404041;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%,
+        color-stop(0, #6d6d6e),
+        color-stop(0.5, #3c3c3c),
+        color-stop(0.5, #3c3c3c),
+        color-stop(1, #000) );
+    color: #fff;
+    text-decoration: none;
+}
+#invoice header h2 {
+    -webkit-box-flex: 1;
+    font-size: 15px;
+    text-align: center;
+}
+#invoice article {
+    background-color: #eee;
+    position: absolute;
+    top: 43px;
+    z-index: 5;
+    bottom: 0;
+    width: 100%;
+}
+#invoice .detail {
+    padding: 10px 10px 0 10px;
+}
+#invoice .total_amount,
+#invoice .doc_no {
+    display: -webkit-box;
+}
+#invoice .doc_no .label {
+    color: #666;
+    font-size: 16px;
+    text-align: right;
+    width: 150px;
+}
+#invoice .doc_no .no {
+    color: #246ea9;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 0 0 3px;
+}
+#invoice .total_amount {
+    -webkit-box-align: end;
+    padding: 0 0 10px 0;
+}
+#invoice .total_amount .label {
+    color: #a8a8a8;
+    width: 150px;
+}
+#invoice .total_amount .amount {
+    font-size: 18px;
+    padding: 0 3px 0 0;
+}
+#invoice .item {
+    border-radius: 10px;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+    padding: 0 15px;
+}
+#invoice .row {
+    display: -webkit-box;
+    padding: 5px 0;
+}
+#invoice .cell {
+    padding: 0 20px 0 0;
+}
+#invoice .item .label {
+    color: #a8a8a8;
+}
+#invoice .item .value {
+    font-size: 14px;
+}

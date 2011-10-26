@@ -1,15 +1,16 @@
 <ul>
+<% var includes = ["dso", "openAmount", "interestLoss"]; %>
     <% if (!_.size(data)) { %>
         <div class="no_records">No Records</div>
     <% }; %>
     <% _.each(data, function (item) { %>
-    <li class="item" data-id="<%=item.customerId%>">
-        <% _.each(item, function (val, key) { %>
-            <% if(key !== "customerId") {%>
-        <div ><%=val%></div>
-            <% } %>
-        <% }); %>
-        <div class="unit">DAYS</div>
+    <li class="item" data-id="<%=item.customerId%>" data-code="<%=item.companyCode%>">
+        <div class="top">
+            <div><%=item.customerName%></div>
+            <div><% var prop =  _.find(includes, function (p) {if (p in item) {return true;}});%><%=item[prop]%></div>
+            <div class="unit">DAYS</div>
+        </div>
+        <div class="down"><%=item.companyCode%>-<%=item.companyName%></div>
     </li>
     <% }); %>
 </ul>

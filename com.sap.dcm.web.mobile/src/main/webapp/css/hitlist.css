@@ -146,12 +146,13 @@
 
 #hitlist .panel li.item {
     display: -webkit-box;
-    height: 45px;
+    min-height: 45px;
     border-bottom: 1px solid;
     padding: 0 10px;
+    -webkit-box-orient: vertical;
 }
 
-#hitlist .panel li.item div {
+#hitlist .panel li.item .top {
     display: -webkit-box;
     -webkit-box-align: center;
     -webkit-box-pack: start;
@@ -159,18 +160,19 @@
     font-weight: bold;
 }
 
-#hitlist .panel li.item div:first-child {
+#hitlist li.item .top div:first-child {
     color: blue;
+    max-width: 190px;
 }
 
-#hitlist .panel li.item div:first-child + div {
+#hitlist li.item .top div:first-child + div {
     -webkit-box-flex: 1;
-    -webkit-box-pack: end;
+    text-align: right;
     padding: 0 5px;
 }
 
-#hitlist .panel li.item div:last-child {
+#hitlist li.item .top div:last-child {
     font-size: 15px;
     color: #808080;
-    padding: 0 10px 0 5px;
+    padding-left: 5px;
 }

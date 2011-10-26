@@ -8,6 +8,7 @@ App.registerPage("logon", function () {
             if (logonButton.data("ajax") === "pending") {
                 return;
             }
+            logonView.$("#errormessage")[0].innerHTML= "<div class='loading'><div class='loading_animation'></div></div>";
             var username = logonView.$("#username").val();
             var password = logonView.$("#password").val();
             if (username && password) {

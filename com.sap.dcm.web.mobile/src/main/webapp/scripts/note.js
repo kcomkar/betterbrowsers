@@ -5,19 +5,6 @@ App.registerPage("note", function () {
         var proxy = new EventProxy();
         
         var originalData;
-        //fetch the notes' data
-        noteView.fetchData = function (url) {
-            $.getJSON("ajax/"+ url +".json", function (data) {
-               originalData = data.noteListResponse;
-               proxy.trigger("data", originalData);
-            });
-        };
-        noteView.fetchData("notes");
-        
-        //fetch the template for notes
-        App.getTemplate("note", function (template) {
-            proxy.trigger("template", template);
-        });
         
         noteView.render = function(template, data) {
         	var html = _.template(template, {notes: data["notes"] || []});
@@ -37,17 +24,67 @@ App.registerPage("note", function () {
                 scrollbarClass : 'myScrollbar'
             });
         };
-        
+
         proxy.assignAll("template", "data", function (template, data) {
-           noteView.render(template, data);
-        });
+            noteView.render(template, data);
+         });
+        //fetch the notes' data
+        noteView.fetchData = function (url) {
+           /* $.getJSON("ajax/"+ url +".json", function (data) {
+               originalData = data.noteListResponse;
+               proxy.trigger("data", originalData);
+            }); */
+     	
+     	 $.ajax({
+           	type:'GET',
+           	url:'rest/mobile/collectionOverview/getCustomer/0000105511/notes',
+           	dataType:'json',
+           	success:function (data) {
+           		originalData = data.noteListResponse;
+           		 proxy.trigger("data", originalData);
+           	}
+               });
+        };
+        noteView.fetchData("notes");
         
-        noteView.bind("add", function () {
+        //fetch the template for notes
+        App.getTemplate("note", function (template) {
+            proxy.trigger("template", template);
+        });
+
+        var actionButton = noteView.$(".action");
+        var noteSet = noteView.$(".notes_set");
+        var noteAdd = noteView.$(".notes_add");
+        noteView.bind("action", function () {
             /*
              * POST HEADER: content-type: application/x-www-form-urlencoded
              * BODY: contact=wangchenchang&text=aaaaaaaa
              * 
              * */
+        	if (actionButton.hasClass("add")) {
+        		// TODO
+        		noteAdd.removeClass("hidden");
+        		noteSet.addClass("hidden");
+        		actionButton.removeClass("add").addClass("submit");
+        	} else if (actionButton.hasClass("submit")) {
+        		// TODO
+        		$.ajax({
+                	type:'POST',
+                	url:'rest/mobile/collectionOverview/getCustomer/0000105511/notes',
+                	data:{"contact":"wangchenchang","text":noteView.$("textarea").val() },
+                	dataType:'json',
+                	success:function (data) {
+                		noteView.fetchData("notes");
+                		noteAdd.addClass("hidden");
+                		noteSet.removeClass("hidden");
+                		actionButton.removeClass("submit").addClass("add");
+                	},
+                	error:function(data)
+                	{
+                		//todo;
+                	}
+                    });
+        	}
         });
         
         noteView.bind("done", function () {
@@ -55,7 +92,7 @@ App.registerPage("note", function () {
         });
         
         noteView.delegateEvents({
-            "click .add": "add",
+            "click .action": "action",
             "click .done": "done"
         });
         

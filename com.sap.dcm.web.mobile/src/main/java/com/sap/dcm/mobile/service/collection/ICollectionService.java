@@ -18,22 +18,22 @@ public interface ICollectionService {
 	@GET
 	public Response getOverview();
 	
-	@Path("getCustomer/{customerId}")
+	@Path("getCustomer/{companyCode}/{customerId}")
 	@GET
-	public Response getCustomerKPI(@PathParam("customerId") String customerId);
+	public Response getCustomerKPI(@PathParam("companyCode") String companyCode, @PathParam("customerId") String customerId);
 	
-	@Path("getCustomer/{customerId}/notes")
+	@Path("getCustomer/{companyCode}/{customerId}/notes")
 	@POST
 	@Consumes({ "application/x-www-form-urlencoded" })
-	public Response createNote(@PathParam("customerId") String customerId, @FormParam("contact") String contact, @FormParam("text") String text);
+	public Response createNote(@PathParam("companyCode") String companyCode,@PathParam("customerId") String customerId, @FormParam("contact") String contact, @FormParam("text") String text);
 	
-	@Path("getCustomer/{customerId}/notes")
+	@Path("getCustomer/{companyCode}/{customerId}/notes")
 	@GET
-	public Response getNotes(@PathParam("customerId") String customerId);
+	public Response getNotes(@PathParam("companyCode") String companyCode,@PathParam("customerId") String customerId);
 	
-	@Path("getCustomer/{customerId}/invoices/{invoiceId}")
+	@Path("getCustomer/{companyCode}/{customerId}/invoices/{invoiceId}")
 	@GET
-	public Response getInvoice(@PathParam("customerId") String customerId,@PathParam("invoiceId") String invoiceId);
+	public Response getInvoice(@PathParam("companyCode") String companyCode,@PathParam("customerId") String customerId,@PathParam("invoiceId") String invoiceId);
 	
 	
 	

@@ -44,11 +44,11 @@ public class CollectionServiceImpl implements ICollectionService,ApplicationCont
 		
 	}
 	
-	public Response getCustomerKPI(String customerId) {
+	public Response getCustomerKPI(String companyCode, String customerId) {
 		try{
 			CollectionOverviewDao dao = (CollectionOverviewDao)this.getContext().getBean("collectionOverviewDao");
-			CustomerKPI customerKPI = dao.getCustomerKPI(customerId);
-			List<InvoiceHeader> invoiceHeaders = dao.getInvoices(customerId);
+			CustomerKPI customerKPI = dao.getCustomerKPI(companyCode,customerId);
+			List<InvoiceHeader> invoiceHeaders = dao.getInvoices(companyCode,customerId);
 			//List<Note> notes = dao.getNotes(customerId);
 			
 			CollectionDetailResponse response = new CollectionDetailResponse();
@@ -70,10 +70,10 @@ public class CollectionServiceImpl implements ICollectionService,ApplicationCont
 		}
 	}
 
-	public Response createNote(String customerId, String contact, String text) {
+	public Response createNote(String companyCode,String customerId, String contact, String text) {
 		CollectionOverviewDao dao = (CollectionOverviewDao)this.getContext().getBean("collectionOverviewDao");
 		try{
-			dao.createNote(customerId, contact, text);
+			dao.createNote(companyCode,customerId, contact, text);
 			return Response.ok().build();
 		}
 		catch(Exception e){
@@ -82,10 +82,10 @@ public class CollectionServiceImpl implements ICollectionService,ApplicationCont
 		}
 	}
 
-	public Response getNotes(String customerId) {
+	public Response getNotes(String companyCode,String customerId) {
 		CollectionOverviewDao dao = (CollectionOverviewDao)this.getContext().getBean("collectionOverviewDao");
 		try{
-			List<Note> notes = dao.getNotes(customerId);
+			List<Note> notes = dao.getNotes(companyCode,customerId);
 			NoteListResponse result = new NoteListResponse();
 			result.setNotes(notes);
 			result.setCustomerId(customerId);
@@ -97,10 +97,10 @@ public class CollectionServiceImpl implements ICollectionService,ApplicationCont
 		}
 	}
 
-	public Response getInvoice(String customerId, String invoiceId) {
+	public Response getInvoice(String companyCode,String customerId, String invoiceId) {
 		try{
 			CollectionOverviewDao dao = (CollectionOverviewDao)this.getContext().getBean("collectionOverviewDao");
-			InvoiceDetail invoiceDetail = dao.getInvoice(customerId,invoiceId);
+			InvoiceDetail invoiceDetail = dao.getInvoice(companyCode,customerId,invoiceId);
 			
 			InvoiceDetailResponse response = new InvoiceDetailResponse();
 			response.setInvoiceDetail(invoiceDetail);
