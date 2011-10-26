@@ -1,5 +1,7 @@
 package com.sap.dcm.mobile.service.preferences;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -18,5 +20,5 @@ public interface IPreferencesService {
 	
 	@PUT
 	@Consumes({ "application/x-www-form-urlencoded" })
-	public Response updatePreferences( @FormParam("currency") String currency, @FormParam("companyCode") String companyCode);
+	public Response updatePreferences( @FormParam("currency") String currency, @FormParam("companyCodes") List<String> companyCodes);
 }

@@ -12,6 +12,23 @@ public class CollectionOverviewDSO {
 	private String customerId;
 	private String customerName;
 	private BigDecimal dso;
+	
+	private String companyCode;
+	private String companyName;
+	
+	
+	public String getCompanyCode() {
+		return companyCode;
+	}
+	public void setCompanyCode(String companyCode) {
+		this.companyCode = companyCode;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
 	public String getCustomerId() {
 		return customerId;
 	}

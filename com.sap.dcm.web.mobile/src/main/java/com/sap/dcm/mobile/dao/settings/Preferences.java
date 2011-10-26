@@ -1,5 +1,8 @@
 package com.sap.dcm.mobile.dao.settings;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,18 +11,20 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Preferences {
 	private String currency = "";
-	private String companyCode = "";
+	private List<String> companyCodes = new ArrayList<String>();
 	public String getCurrency() {
 		return currency;
 	}
 	public void setCurrency(String currency) {
 		this.currency = currency;
 	}
-	public String getCompanyCode() {
-		return companyCode;
+	public List<String> getCompanyCodes() {
+		return companyCodes;
 	}
-	public void setCompanyCode(String companyCode) {
-		this.companyCode = companyCode;
+	public void setCompanyCodes(List<String> companyCodes) {
+		this.companyCodes = companyCodes;
 	}
+	
+	
 	
 }

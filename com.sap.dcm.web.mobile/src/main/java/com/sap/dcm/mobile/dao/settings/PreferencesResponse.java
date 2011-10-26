@@ -27,4 +27,13 @@ public class PreferencesResponse {
 		this.preferences = preferences;
 	}
 	
+	private List<CompanyCodeKV> companyCodeSearchHelp = new ArrayList<CompanyCodeKV>();
+	public List<CompanyCodeKV> getCompanyCodeSearchHelp() {
+		return companyCodeSearchHelp;
+	}
+	public void setCompanyCodeSearchHelp(List<CompanyCodeKV> companyCodeSearchHelp) {
+		this.companyCodeSearchHelp = companyCodeSearchHelp;
+	}
+	
+	
 }

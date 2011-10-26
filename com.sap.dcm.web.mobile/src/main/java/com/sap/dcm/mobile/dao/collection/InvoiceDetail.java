@@ -19,6 +19,22 @@ public class InvoiceDetail {
 	private BigDecimal amount; //AMOUNT
 	private String deliveryDate;
 	private String deliveredOn;
+	private String dueDate;
+	private String expectedDueDate;
+	
+	
+	public String getDueDate() {
+		return dueDate;
+	}
+	public void setDueDate(String dueDate) {
+		this.dueDate = dueDate;
+	}
+	public String getExpectedDueDate() {
+		return expectedDueDate;
+	}
+	public void setExpectedDueDate(String expectedDueDate) {
+		this.expectedDueDate = expectedDueDate;
+	}
 	public String getInvoiceNumber() {
 		return invoiceNumber;
 	}
