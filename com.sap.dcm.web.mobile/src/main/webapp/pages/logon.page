@@ -27,8 +27,7 @@
   </div>
     <div class="footer">
     <div class="footer_content">
-    <div class="logon_productname">SAP Dynamic Cash Management</div>
-    <div class="logon_productcompany">POWERED BY SAP HAHA</div>
+    <div class="dcm_logo"></div>
     <div class="logon_img"></div>
     </div>
     <div>
