@@ -1,6 +1,6 @@
 {
     "logon" : {
-        "username": "Username",
+        "username": "User name",
         "password": "Password",
         "rememberme": "Remember me?",
         "yes": "Yes",
@@ -8,6 +8,6 @@
         "advance": "Advance setting",
         "serverurl": "Server address",
         "port": "Port",
-        "logon": "Log In"
+        "logon": "Log On"
     }
 }
