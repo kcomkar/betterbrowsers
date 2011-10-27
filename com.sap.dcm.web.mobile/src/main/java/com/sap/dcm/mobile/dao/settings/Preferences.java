@@ -11,6 +11,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Preferences {
 	private String currency = "";
+	private String hana = "";
+	
+	
+	public String getHana() {
+		return hana;
+	}
+	public void setHana(String hana) {
+		this.hana = hana;
+	}
 	private List<String> companyCodes = new ArrayList<String>();
 	public String getCurrency() {
 		return currency;

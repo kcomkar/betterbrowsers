@@ -14,9 +14,10 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import com.sap.dcm.mobile.security.GJUserUtils;
 import com.sap.dcm.web.exception.db.HDBWrappedException;
 import com.sap.dcm.web.exception.security.AuthenticationException;
-import com.sap.dcm.web.security.UserUtils;
+
 
 public class CollectionOverviewDao {
 	private static final Logger LOGGER = Logger
@@ -24,7 +25,8 @@ public class CollectionOverviewDao {
 	
 	public CollectionOverviewResponse getHitList() throws AuthenticationException, HDBWrappedException{
 		CollectionOverviewResponse result = new CollectionOverviewResponse();
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		/*try{
 			Class.forName("com.sap.db.jdbc.Driver");
 		}
@@ -68,18 +70,19 @@ public class CollectionOverviewDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 		
 	}
 	
 	public CustomerKPI getCustomerKPI(String companyCode, String customerId) throws AuthenticationException, HDBWrappedException{
 		CustomerKPI result = null;
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		/*try{
 			Class.forName("com.sap.db.jdbc.Driver");
 		}
@@ -115,17 +118,18 @@ public class CollectionOverviewDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
 	public List<InvoiceHeader> getInvoices(String companyCode, String customerId) throws AuthenticationException, HDBWrappedException{
 		List<InvoiceHeader> result = new ArrayList<InvoiceHeader>();
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		/*try{
 			Class.forName("com.sap.db.jdbc.Driver");
 		}
@@ -137,16 +141,16 @@ public class CollectionOverviewDao {
 		try{
 			
 			// set parameter
-			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
+			/*CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
 			cs.executeUpdate();
 			
 			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
 			cs.setString(1, companyCode);
-			cs.executeUpdate();
+			cs.executeUpdate();*/
 			
 			
-			cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_INVOICE_LIST/proc\"(?)}");
+			CallableStatement cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_INVOICE_LIST/proc\"(?)}");
 			cs.execute();
 			ResultSet rs = cs.getResultSet();
 			result = wrapInvoiceHeader(rs);
@@ -158,31 +162,32 @@ public class CollectionOverviewDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
 	public List<Note> getNotes(String companyCode, String customerId) throws AuthenticationException, HDBWrappedException{
 		List<Note> result = new ArrayList<Note>();
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		
 		try{
 			
 			// set parameter
-			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
+			/*CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
 			cs.executeUpdate();
 			
 			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
 			cs.setString(1, companyCode);
-			cs.executeUpdate();
+			cs.executeUpdate();*/
 			
 	
-			cs = connection.prepareCall("{CALL COLM.GET_NOTES(?)}");
+			CallableStatement cs = connection.prepareCall("{CALL COLM.GET_NOTES(?)}");
 			cs.execute();
 			ResultSet rs = cs.getResultSet();
 			result = wrapNotes(rs);
@@ -194,30 +199,31 @@ public class CollectionOverviewDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
 	public Note createNote(String companyCode,String customerId, String contact, String text) throws HDBWrappedException, AuthenticationException{
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		
 		try{
 			
 			// set parameter
-			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
+			/*CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
 			cs.executeUpdate();
 			
 			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
 			cs.setString(1, companyCode);
-			cs.executeUpdate();
+			cs.executeUpdate();*/
 			
 	
-			cs = connection.prepareCall("{CALL COLM.INSERT_NOTE(?,?)}");
+			CallableStatement cs = connection.prepareCall("{CALL COLM.INSERT_NOTE(?,?)}");
 			cs.setString(1, contact);
 			cs.setString(2, text);
 			
@@ -231,30 +237,31 @@ public class CollectionOverviewDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
 	
 	public InvoiceDetail getInvoice(String companyCode,String customerId, String invoiceId) throws AuthenticationException, HDBWrappedException{
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		
 		try{
 			// set parameter
-			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
+			/*CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_CUSTOMER(?)}");
 			cs.setString(1, customerId);
 			cs.executeUpdate();
 		    
 			cs = connection.prepareCall("{CALL COLM.UPDATE_COMPANY(?)}");
 			cs.setString(1, companyCode);
-			cs.executeUpdate();
+			cs.executeUpdate();*/
 			
 			// set parameter
-			cs = connection.prepareCall("{CALL COLM.UPDATE_DOCUMENT(?)}");
+			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_DOCUMENT(?)}");
 			cs.setString(1, invoiceId);
 			cs.executeUpdate();
 			
@@ -271,11 +278,11 @@ public class CollectionOverviewDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
