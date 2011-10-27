@@ -105,7 +105,7 @@ public class CollectionOverviewDao {
 			
 			
 			// get kpi
-			cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_CUSTOMER_KPIS/proc\"(?)}");
+			cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_CUSTOMER_KPIS_MOBILE/proc\"(?)}");
 			cs.execute();
 			ResultSet rs = cs.getResultSet();
 			result = wrapCustomerKPI(rs);
