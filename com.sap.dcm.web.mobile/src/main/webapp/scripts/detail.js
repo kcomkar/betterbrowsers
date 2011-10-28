@@ -68,6 +68,7 @@ App.registerPage("detail", function () {
         // Render AR overview
         proxy.assign("data", "template_invoices", function (data, template) {
             var html = _.template(template, data);
+            detailView.$(".invoices .column_loading").remove();
             detailView.$(".invoices .invoices_scroller").html(html);
             var scroll = new iScroll(detailView.$(".invoices")[0], {
                 hScrollbar: false,

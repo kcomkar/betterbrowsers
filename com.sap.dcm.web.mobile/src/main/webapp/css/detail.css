@@ -88,11 +88,17 @@
     display: -webkit-box;
     -webkit-box-pack: center;
     -webkit-box-align: center;
+    margin: 0 14px;
 }
 #detail .customer_info,
 #detail .financial,
 #detail .overview {
     padding: 16px 14px 0;
+    position: absolute;
+    top: 24px;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 #detail .company_name {
     font-size: 18px;
