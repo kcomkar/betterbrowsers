@@ -54,9 +54,24 @@
         <!-- operation button here without localization-->
         <nav class="toolbar">
             <ul>
-                <li><a class="show_hitlist" href="javascript:;">Collections Hit List</a></li>
-                <li><a class="show_contact" href="javascript:;">Contact Information</a></li>
-                <li><a class="show_notes" href="javascript:;">Customer Notes</a></li>
+                <li>
+                    <a class="show_hitlist" href="javascript:;">
+                        <div class="icon"></div>
+                        <div class="txt">Collections Hit List</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="show_contact" href="javascript:;">
+                        <div class="icon"></div>
+                        <div class="txt">Contact Information</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="show_notes" href="javascript:;">
+                        <div class="icon"></div>
+                        <div class="txt">Customer Notes</div>
+                    </a>
+                </li>
             </ul>
         </nav>
     </footer>

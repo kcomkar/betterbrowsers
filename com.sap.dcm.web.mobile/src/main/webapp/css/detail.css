@@ -238,9 +238,28 @@
 }
 #detail .toolbar a {
     display: -webkit-box;
-    text-align: center;
     -webkit-box-align: center;
     height: 52px;
     color: #787878;
     text-decoration: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+}
+#detail .toolbar .show_hitlist .icon {
+    background-image: url(../images/hitlist.png);
+}
+#detail .toolbar .show_contact .icon {
+    background-image: url(../images/contact.png);
+}
+#detail .toolbar .show_notes .icon {
+    background-image: url(../images/note.png);
+}
+#detail .toolbar .icon {
+    height: 28px;
+    width: 26px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+#detail .toolbar .txt {
+    font-size: 11px;
 }
