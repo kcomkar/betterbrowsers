@@ -13,6 +13,14 @@ public class InvoiceHeader {
 	private String docNumber;//BILLING_DOCUMENT_ID
 	private String dueDate; // DUE_DATE
 	private BigDecimal amount; // AMOUNT
+	private String expectedDueDate;
+	
+	public String getExpectedDueDate() {
+		return expectedDueDate;
+	}
+	public void setExpectedDueDate(String expectedDueDate) {
+		this.expectedDueDate = expectedDueDate;
+	}
 	public String getDocNumber() {
 		return docNumber;
 	}

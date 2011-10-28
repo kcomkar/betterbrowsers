@@ -21,6 +21,7 @@
 		<value>currencySearchHelp</value>
 		<value>companyCodeSearchHelp</value>
 		<value>companyCodes</value>
+		<value>invoiceDetails</value>
 	</util:list>
 	<bean id="jsonProvider" class="org.apache.cxf.jaxrs.provider.JSONProvider">
 		<property name="serializeAsArray" value="true"/>
