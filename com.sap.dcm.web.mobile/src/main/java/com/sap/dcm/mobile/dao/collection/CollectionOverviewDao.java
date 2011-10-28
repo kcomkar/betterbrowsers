@@ -150,7 +150,7 @@ public class CollectionOverviewDao {
 			cs.executeUpdate();*/
 			
 			
-			CallableStatement cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_INVOICE_LIST/proc\"(?)}");
+			CallableStatement cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_INVOICE_LIST_MOBILE/proc\"(?)}");
 			cs.execute();
 			ResultSet rs = cs.getResultSet();
 			result = wrapInvoiceHeader(rs);
