@@ -114,18 +114,13 @@ public class CollectionServiceImpl implements ICollectionService,ApplicationCont
 		try{
 			CollectionOverviewDao dao = (CollectionOverviewDao)this.getContext().getBean("collectionOverviewDao");
 			long begin = System.currentTimeMillis();
-			InvoiceDetail invoiceDetail = dao.getInvoice(companyCode,customerId,invoiceId);
+			List<InvoiceDetail> invoiceDetails = dao.getInvoice(companyCode,customerId,invoiceId);
 			
 			InvoiceDetailResponse response = new InvoiceDetailResponse();
-			response.setInvoiceDetail(invoiceDetail);
+			response.setInvoiceDetails(invoiceDetails);
 			
 			System.out.println(System.currentTimeMillis() - begin);
-			if(invoiceDetail == null){
-				return Response.noContent().build();
-			}
-			else{
-				return Response.ok().entity(response).build();
-			}
+			return Response.ok().entity(response).build();
 			
 		}
 		catch(Exception e){

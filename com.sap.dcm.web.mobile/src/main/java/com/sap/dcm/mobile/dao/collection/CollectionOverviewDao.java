@@ -246,7 +246,7 @@ public class CollectionOverviewDao {
 	}
 	
 	
-	public InvoiceDetail getInvoice(String companyCode,String customerId, String invoiceId) throws AuthenticationException, HDBWrappedException{
+	public List<InvoiceDetail> getInvoice(String companyCode,String customerId, String invoiceId) throws AuthenticationException, HDBWrappedException{
 		Connection connection = GJUserUtils.getDBConnection();
 		System.out.println("Connection:" + connection);
 		
@@ -286,9 +286,10 @@ public class CollectionOverviewDao {
 		}
 	}
 	
-	protected InvoiceDetail wrapInvoiceDetail(ResultSet rs) throws SQLException{
-		InvoiceDetail result = new InvoiceDetail();
+	protected List<InvoiceDetail> wrapInvoiceDetail(ResultSet rs) throws SQLException{
+		List<InvoiceDetail> invoiceDetails = new ArrayList<InvoiceDetail>();
 		while(rs.next()){
+			InvoiceDetail result = new InvoiceDetail();
 			String invoiceNumber = rs.getString("INVOICE_NUMBER");
 			result.setInvoiceNumber(invoiceNumber!=null?invoiceNumber:"");
 			
@@ -298,8 +299,8 @@ public class CollectionOverviewDao {
 			String product = rs.getString("PRODUCT");
 			result.setProduct(product!=null?product:"");
 			
-			String productDescription = rs.getString("PRODUCT_DESCRIPTION");
-			result.setProductDescription(productDescription!=null?productDescription:"");
+			/*String productDescription = rs.getString("PRODUCT_DESCRIPTION");
+			result.setProductDescription(productDescription!=null?productDescription:"");*/
 			
 			BigDecimal unitPrice = rs.getBigDecimal("UNIT_PRICE");
 			result.setUnitPrice(unitPrice!=null?unitPrice:new BigDecimal(0));
@@ -325,7 +326,7 @@ public class CollectionOverviewDao {
 				result.setDeliveredOn(df.format(deliveredOn));
 			}
 			
-			Date dueDate = rs.getDate("DUE_DATE");
+			/*Date dueDate = rs.getDate("DUE_DATE");
 			if(dueDate == null){
 				result.setDueDate("");
 			}
@@ -341,12 +342,12 @@ public class CollectionOverviewDao {
 			else{
 				DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
 				result.setExpectedDueDate(df.format(expectedDate));
-			}
+			}*/
 			
-			return result;
+			invoiceDetails.add(result);
 		}
 		
-		return null;
+		return invoiceDetails;
 	}
 	protected List<Note> wrapNotes(ResultSet rs) throws SQLException{
 		List<Note> result = new ArrayList<Note>();
@@ -464,6 +465,15 @@ public class CollectionOverviewDao {
 			else{
 				DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
 				invoiceHeader.setDueDate(df.format(dueDate));
+			}
+			
+			Date expectedDate = rs.getDate("EXPECTED_DUE_DATE");
+			if(expectedDate == null){
+				invoiceHeader.setExpectedDueDate("");
+			}
+			else{
+				DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+				invoiceHeader.setExpectedDueDate(df.format(expectedDate));
 			}
 			
 			BigDecimal amount = rs.getBigDecimal("AMOUNT");

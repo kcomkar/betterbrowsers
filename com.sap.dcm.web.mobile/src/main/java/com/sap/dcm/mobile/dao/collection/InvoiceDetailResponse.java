@@ -1,5 +1,7 @@
 package com.sap.dcm.mobile.dao.collection;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,14 +10,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class InvoiceDetailResponse {
 
-	private InvoiceDetail invoiceDetail;
+	private List<InvoiceDetail> invoiceDetails;
 
-	public InvoiceDetail getInvoiceDetail() {
-		return invoiceDetail;
+	public List<InvoiceDetail> getInvoiceDetails() {
+		return invoiceDetails;
 	}
 
-	public void setInvoiceDetail(InvoiceDetail invoiceDetail) {
-		this.invoiceDetail = invoiceDetail;
+	public void setInvoiceDetails(List<InvoiceDetail> invoiceDetails) {
+		this.invoiceDetails = invoiceDetails;
 	}
+
+	
 	
 }
