@@ -1,7 +1,16 @@
 <div class="doc_no">
     <div class="label">Invoice No.</div>
-    <div class="no"><%=invoiceDetail.invoiceNumber%></div>
+    <div class="no"><%=invoiceId%></div>
+    <div class="action">
+<%  if (previousId) {%>
+        <a class="previous" data-invoice_id="<%=previousId%>" href="javascript:;">previous</a>
+<%  }%>
+<%  if (nextId) {%>
+        <a class="next" data-invoice_id="<%=nextId%>" href="javascript:;">next</a>
+<%  }%>
+    </div>
 </div>
+<% if (invoiceDetail) {%>
 <div class="total_amount">
     <div class="label">Total Amount</div>
     <div class="amount"><%=invoiceDetail.amount%></div>
@@ -40,3 +49,4 @@
         </div>
     </div>
 </div>
+<%}%>
