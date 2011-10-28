@@ -106,7 +106,6 @@ App.registerPage("detail", function () {
         detailView.bind("viewDetail", function (event) {
             var target = $(event.currentTarget);
             var invoceId = target.data("itemid");
-            console.log("click.");
             page.openViewport("invoice/" + companyCode + "/" + customerId + "/" + invoceId);
         });
 
