@@ -9,9 +9,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sap.dcm.mobile.security.GJUserUtils;
 import com.sap.dcm.web.exception.db.HDBWrappedException;
 import com.sap.dcm.web.exception.security.AuthenticationException;
-import com.sap.dcm.web.security.UserUtils;
+
 
 public class PreferencesDao {
 
@@ -41,7 +42,8 @@ public class PreferencesDao {
 		}
 	}*/
 	public Preferences updatePreferences(String currency, List<String> companyCodes) throws AuthenticationException, HDBWrappedException{
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		/*try{
 		Class.forName("com.sap.db.jdbc.Driver");
 	}
@@ -74,7 +76,7 @@ public class PreferencesDao {
 			
 			
 			// set parameter
-			String schemaName = UserUtils.getPrincipal().getUsername().toUpperCase().trim();
+			String schemaName = GJUserUtils.getPrincipal().getUsername().toUpperCase().trim();
 			String tmpTableFullName = schemaName +"."+"#TMP_COMPANY_IN";
 			CallableStatement cs = connection.prepareCall("{CALL COLM.UPDATE_PREFERENCE(?,"+tmpTableFullName+")}");
 			cs.setString(1, currency);
@@ -95,11 +97,11 @@ public class PreferencesDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
@@ -137,7 +139,8 @@ public class PreferencesDao {
 	}*/
 	
 	public List<String> getCompanyRange() throws AuthenticationException, HDBWrappedException{
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		List<String> result = new ArrayList<String>();
 		try{
 			// set parameter
@@ -153,16 +156,17 @@ public class PreferencesDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
 	public String getReportingCurrency() throws AuthenticationException, HDBWrappedException{
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		String result = "";
 		try{
 			// set parameter
@@ -179,11 +183,11 @@ public class PreferencesDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
@@ -197,7 +201,8 @@ public class PreferencesDao {
 	}*/
 	
 	public List<String> getCurrencySearchHelp() throws HDBWrappedException, AuthenticationException{
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		List<String> result = new ArrayList<String>();
 		try{
 			// set parameter
@@ -213,16 +218,17 @@ public class PreferencesDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
 	public List<CompanyCodeKV> getCompanyCodeSearchHelp() throws HDBWrappedException, AuthenticationException{
-		Connection connection = UserUtils.getDBConnection();
+		Connection connection = GJUserUtils.getDBConnection();
+		System.out.println("Connection:" + connection);
 		List<CompanyCodeKV> result = new ArrayList<CompanyCodeKV>();
 		try{
 			// set parameter
@@ -238,11 +244,11 @@ public class PreferencesDao {
 			throw new HDBWrappedException(e);
 		}
 		finally{
-			try {
+			/*try {
 				connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	

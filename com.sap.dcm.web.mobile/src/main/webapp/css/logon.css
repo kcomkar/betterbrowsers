@@ -1,9 +1,9 @@
 #logon{
-	background-color: gray;
+	background-color:#999999;
 }
 #logon article {
     top: 50px;
-    bottom: 10px;
+    bottom: 5px;
     left: 20px;
     right: 20px;
     position: absolute;
@@ -41,9 +41,9 @@
 #logon article .logon_title
 {
 	width:100%;
-	background-color:#e0a000;
+	background-color:#e3b500;
 	font-size: 20pt;
-	color:gray;
+	color:#999999;
 	text-align:center;
 	font-weight:700;
 }
@@ -84,21 +84,25 @@
 	color:white;
 }
 
-#logon .footer .logon_productname
+#logon .footer .dcm_logo
 {
-    font-size:10pt;
-    color:dark;
-    font-weight:700;
+	background-image: url("../images/dcmlogo.png");
+	background-repeat:no-repeat;
+	width:260px;
+	height:30px;
+    -webkit-background-size:100%;
+    -o-background-size:100%;
+    background-size: cover;
 }
-#logon .footer .logon_productcompany
-{
-    font-size:9pt;
-    color:dark;
-}
+
 #logon .footer .logon_img
 {
-	background-image: url("../images/loading.png");
-	background-repeat: no-repeat;
-	height:20px;
-	width:30px;
+	margin-top:5px;
+	background-image: url("../images/saplogo.png");
+	background-repeat:no-repeat;
+	width:50px;
+	height:25px;
+    -webkit-background-size:100%;
+    -o-background-size:100%;
+    background-size: cover;
 }

@@ -1,7 +1,11 @@
 <div class="system">
     <div class="sub_title">System</div>
     <ul>
-        <li class="logout">Log Out (<%=App.username%>)</li>
+        <li class="logout">Log Off (<%=App.username%>)</li>
+        <li class="record System" data-type="hanasystem">
+            <div class="field">System</div>
+            <div class="value"><%=preferences.hana%></div>
+        </li>
     </ul>
 </div>
 <div class="reporting">
@@ -17,6 +21,5 @@
             <div class="value"><%=preferences.companyCodes.join(",")%></div>
             <div class="drill_down"> > </div>
         </li>
-        
     </ul>
 </div>

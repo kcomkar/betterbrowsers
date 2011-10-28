@@ -20,15 +20,14 @@
     </ul>
 	<!-- Login Button -->
     <div class="logon_button">
-        <input id="logon_button" name="{{logon}}" value="logon" type="button" />
+        <input id="logon_button" name="logon" value="{{logon}}" type="button" />
     </div>
     <div class="errormessage" id="errormessage"></div>
     </div>
   </div>
     <div class="footer">
     <div class="footer_content">
-    <div class="logon_productname">SAP Dynamic Cash Management</div>
-    <div class="logon_productcompany">POWERED BY SAP HAHA</div>
+    <div class="dcm_logo"></div>
     <div class="logon_img"></div>
     </div>
     <div>

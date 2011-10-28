@@ -6,7 +6,7 @@
     <article>
         <div class="setting">
             <div class="column_loading">
-                <div class="loading_animation">Loading...</div>
+                <div class="loading_animation"></div>
             </div>
     </div>
     </article>
