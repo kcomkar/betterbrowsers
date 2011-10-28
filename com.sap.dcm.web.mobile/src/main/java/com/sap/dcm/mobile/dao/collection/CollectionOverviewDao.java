@@ -266,7 +266,7 @@ public class CollectionOverviewDao {
 			cs.executeUpdate();
 			
 	
-			cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_INVOICE_DETAILS/proc\"(?)}");
+			cs = connection.prepareCall("{CALL \"_SYS_BIC\".\"cflm/CALC_INVOICE_DETAILS_MOBILE/proc\"(?)}");
 			cs.execute();
 			ResultSet rs = cs.getResultSet();
 			return wrapInvoiceDetail(rs);
@@ -299,8 +299,8 @@ public class CollectionOverviewDao {
 			String product = rs.getString("PRODUCT");
 			result.setProduct(product!=null?product:"");
 			
-			/*String productDescription = rs.getString("PRODUCT_DESCRIPTION");
-			result.setProductDescription(productDescription!=null?productDescription:"");*/
+			String productDescription = rs.getString("PRODUCT_DESCRIPTION");
+			result.setProductDescription(productDescription!=null?productDescription:"");
 			
 			BigDecimal unitPrice = rs.getBigDecimal("UNIT_PRICE");
 			result.setUnitPrice(unitPrice!=null?unitPrice:new BigDecimal(0));
