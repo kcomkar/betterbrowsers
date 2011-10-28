@@ -27,6 +27,9 @@ App.registerPage("detail", function () {
             dataType: 'json',
             success: function (data) {
                 data.collectionDetailResponse.invoiceHeaders = data.collectionDetailResponse.invoiceHeaders || [];
+                App.Model.invoiceItems = _.map(data.collectionDetailResponse.invoiceHeaders, function (item, index) {
+                    return item.docNumber;
+                });
                 proxy.trigger("data", data.collectionDetailResponse);
             }
         });

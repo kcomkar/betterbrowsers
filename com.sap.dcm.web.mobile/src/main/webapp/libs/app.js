@@ -462,7 +462,7 @@
         }
         var args = hash.split("/");
         var viewName = args.shift();
-        App.trigger("openView", viewName, effectColumn, args);
+        App.trigger("openView", viewName, effectColumn, args, this.viewport);
     };
 
     /**
@@ -619,4 +619,12 @@
             page.postMessage(event, data);
         }
     };
+}(window));
+
+/**
+ * App Model layer.
+ */
+(function (global) {
+    var App = global.App;
+    App.Model = {};
 }(window));
