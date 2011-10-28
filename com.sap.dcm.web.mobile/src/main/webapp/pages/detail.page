@@ -8,25 +8,35 @@
                 <li class="card">
                     <h3>Customer Information</h3>
                     <div class="customer_info">
-
+                        <div class="column_loading">
+                            <div class="loading_animation"></div>
+                        </div>
                     </div>
                 </li>
                 <li class="card">
                     <h3>Accounts Receivable Overview</h3>
                     <div class="overview">
-                        
+                        <div class="column_loading">
+                            <div class="loading_animation"></div>
+                        </div>
                     </div>
                 </li>
                 <li class="card">
                     <h3>Financial Details</h3>
                     <div class="financial">
-
+                        <div class="column_loading">
+                            <div class="loading_animation"></div>
+                        </div>
                     </div>
                 </li>
                 <li class="card">
                     <h3>Outstanding Invoices</h3>
                     <div class="invoices">
-                        <div class="invoices_scroller"></div>
+                        <div class="column_loading">
+                            <div class="loading_animation"></div>
+                        </div>
+                        <div class="invoices_scroller">
+                        </div>
                     </div>
                 </li>
             </ul>
