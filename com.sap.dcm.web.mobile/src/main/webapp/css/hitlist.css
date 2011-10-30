@@ -20,18 +20,27 @@
 }
 
 #hitlist .preference {
-   width: 60px;
-    height: 35px;
+    width: 26px;
+    height: 28px;
     display: -webkit-box;
-    border: 1px solid #333;
-    -webkit-box-align: center;
-    color: white;
-    margin-left: 5px;
-    box-shadow: -1px -1px 2px #fff;
+    background-image: url("../images/setting.png");
+    background-repeat: no-repeat;
+    padding-right: 10px;
+}
+
+#hitlist .preference:hover {
+    background-image: url("../images/_setting.png");
 }
 
 #hitlist h2.title {
     -webkit-box-flex: 1;
+}
+
+#hitlist .collection {
+    position: absolute;
+    top: 44px;
+    bottom: 0;
+    width: 100%;
 }
 
 #hitlist .tab-panel nav {
@@ -127,7 +136,7 @@
 #hitlist .tab-panel .panels {
     bottom: 44px;
     position: absolute;
-    top: 44px;
+    top: 0;
     right: 0;
     left: 0;
     z-index: 1;
@@ -146,9 +155,9 @@
 
 #hitlist .panel li.item {
     display: -webkit-box;
-    min-height: 45px;
+    min-height: 35px;
     border-bottom: 1px solid;
-    padding: 0 10px;
+    padding: 2px 10px;
     -webkit-box-orient: vertical;
 }
 

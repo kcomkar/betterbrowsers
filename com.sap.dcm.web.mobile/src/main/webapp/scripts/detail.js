@@ -117,7 +117,7 @@ App.registerPage("detail", function () {
             "click .show_hitlist": "showHitlist",
             "click .show_contact": "showContact",
             "click .show_notes": "goNote",
-            "tap .invoices .action": "viewDetail"
+            "click .invoices .action": "viewDetail"
         });
     };
 

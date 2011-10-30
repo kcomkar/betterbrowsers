@@ -35,17 +35,37 @@
     display: -webkit-box;
 }
 
+#company .content {
+    position: absolute;
+    min-height: 100%;
+    bottom: 0;
+    top: 44px;
+    width: 100%;
+    background-color: gray;
+}
+#company .content h3, h4 {
+    height: 20px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
 #company .scroll_wrapper {
     position: absolute;
-    top: 44px;
-    background: #AAA;
-    width: 100%;
+    top: 40px;
     bottom: 0;
     width: 100%;
 }
 
 #company .scroll_wrapper div:first-child {
     width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+#company .scroll_wrapper ul {
+    background: white;
+    border-radius: 10px
 }
 
 #company .scroll_wrapper .item {
@@ -58,7 +78,7 @@
 }
 
 #company .scroll_wrapper .item.select {
-    background-image: url("../images/loading.png");
+    background-image: url("../images/check.png");
     background-position: 20px;
     background-repeat: no-repeat;
 }

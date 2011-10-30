@@ -11,7 +11,7 @@ App.registerPage("company", function () {
         });
         //reform the server data
         companyView.reformData = function () {
-            var preference = App.preference;
+            var preference = App.Model.preference;
             var panel = {};
             panel.data = [];
             var originData = preference.companyCodeSearchHelp;
@@ -21,7 +21,7 @@ App.registerPage("company", function () {
                 item.value = old.companyCode + "-" + old.companyName;
                 panel.data.push(item);
             });
-            panel.selectItem = preference.preferences.companyCodes || [];
+            panel.selectItem = preference.preferences.companyCodes;
             panel.sType = "multiple";
             proxy.trigger("data", panel);
         };

@@ -11,7 +11,7 @@ App.registerPage("currency", function () {
         });
         //reform the server data
         var reformData = function () {
-        	var preference = App.preference;
+        	var preference = App.Model.preference;
             var panel = {};
             var originData = preference.currencySearchHelp;
             panel.data = [];

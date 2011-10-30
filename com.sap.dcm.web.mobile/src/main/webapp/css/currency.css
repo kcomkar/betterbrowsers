@@ -35,17 +35,37 @@
     display: -webkit-box;
 }
 
+#currency .content {
+    position: absolute;
+    min-height: 100%;
+    bottom: 0;
+    top: 44px;
+    width: 100%;
+    background-color: gray;
+}
+#currency .content h3 {
+    height: 40px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
 #currency .scroll_wrapper {
     position: absolute;
-    top: 44px;
-    background: #AAA;
-    width: 100%;
+    top: 40px;
     bottom: 0;
     width: 100%;
 }
 
 #currency .scroll_wrapper div:first-child {
     width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+#currency .scroll_wrapper ul {
+    background: white;
+    border-radius: 10px
 }
 
 #currency .scroll_wrapper .item {
@@ -58,7 +78,7 @@
 }
 
 #currency .scroll_wrapper .item.select {
-    background-image: url("../images/loading.png");
+    background-image: url("../images/check.png");
     background-position: 20px;
     background-repeat: no-repeat;
 }

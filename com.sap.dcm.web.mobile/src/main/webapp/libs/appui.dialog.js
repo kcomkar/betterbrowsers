@@ -123,3 +123,25 @@ var AppUI = AppUI || {};
     buffer += "</div>";
     UI.Dialog.defaultTemplate = buffer;
 }(AppUI));
+
+(function (UI) {
+    var buffer = "";
+    buffer += "<div class='dialog hidden'>";
+    buffer +=   "<div class='loading_animation'>";
+    buffer +=   "</div>";
+    buffer +=   "<%=loading%>";
+    buffer += "</div>";
+    UI.Dialog.loadingTemplate = buffer;
+}(AppUI));
+
+(function (UI) {
+    var buffer = "";
+    buffer += "<div class='dialog hidden'>";
+    buffer +=   "<div class='inner'>";
+    buffer +=       "<div class='title'><%=title%></div>";
+    buffer +=       "<div class='content'><%=content%></div>";
+    buffer +=       "<div class='buttons'><a class='yes' href='javascript:;'><%=ok%></a></div>";
+    buffer +=   "</div>";
+    buffer += "</div>";
+    UI.Dialog.messageTemplate = buffer;
+}(AppUI));

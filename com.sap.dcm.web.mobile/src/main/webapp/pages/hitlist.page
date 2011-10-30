@@ -1,11 +1,11 @@
 <section id="hitlist" class="page">
     <header>
         <h2 class="title">Collections Hit List</h2>
-        <a class="preference" placeholder="Setting">Setting</a>
+        <a class="preference" placeholder="Setting"></a>
     </header>
     <div class="collection">
         <div class="column_loading">
-            <div class="loading_animation">Loading...</div>
+            <div class="loading_animation"></div>
         </div>
     </div>
 </section>

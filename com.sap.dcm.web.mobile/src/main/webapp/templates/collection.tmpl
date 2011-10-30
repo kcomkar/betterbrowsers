@@ -8,7 +8,7 @@
         <div class="top">
             <div><%=item.customerName%></div>
             <div><% var prop =  _.find(includes, function (p) {if (p in item) {return true;}});%><%=item[prop]%></div>
-            <div class="unit">DAYS</div>
+            <div class="unit"><%=item["unit"]%></div>
         </div>
         <div class="down"><%=item.companyCode%>-<%=item.companyName%></div>
     </li>

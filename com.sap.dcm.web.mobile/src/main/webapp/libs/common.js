@@ -6,7 +6,7 @@ App.TabModule = function (nav) {
         tab.bind("initialize", function () {
             var util = App.util;
             var proxy = new EventProxy();
-            proxy.assignAll("template", "items", function (template, items) {
+            proxy.assign("template", "items", function (template, items) {
                 var html = _.template(template, {"data": items});
                 tab.panel.html(html);
                 var iscroll = new iScroll(tab.panel[0], {
